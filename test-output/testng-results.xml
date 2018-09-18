@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3042" started-at="2018-09-18T03:22:34Z" finished-at="2018-09-18T03:22:37Z">
+  <suite name="Default suite" duration-ms="2524" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3042" started-at="2018-09-18T03:22:34Z" finished-at="2018-09-18T03:22:37Z">
-      <class name="com.qa.restAPI.RestAssuredGet_ListUsers">
-        <test-method status="PASS" signature="getlistOfUsersDetails()[pri:0, instance:com.qa.restAPI.RestAssuredGet_ListUsers@ae45eb6]" name="getlistOfUsersDetails" duration-ms="3011" started-at="2018-09-18T03:22:34Z" finished-at="2018-09-18T03:22:37Z">
+    <test name="Default test" duration-ms="2524" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
+      <class name="com.qa.restAPI.RestAssuredGet_SingleUser">
+        <test-method status="PASS" signature="getSingleUserDetails()[pri:0, instance:com.qa.restAPI.RestAssuredGet_SingleUser@61832929]" name="getSingleUserDetails" duration-ms="2500" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getlistOfUsersDetails -->
-      </class> <!-- com.qa.restAPI.RestAssuredGet_ListUsers -->
+        </test-method> <!-- getSingleUserDetails -->
+      </class> <!-- com.qa.restAPI.RestAssuredGet_SingleUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
