@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.restAPI.RestAssuredGet_ListUsers">
+      <class name="com.qa.restAPI.RestAssuredPost_CreateUser">
         <methods>
-          <include name="getlistOfUsersDetails"/>
+          <include name="createUser"/>
         </methods>
-      </class> <!-- com.qa.restAPI.RestAssuredGet_ListUsers -->
+      </class> <!-- com.qa.restAPI.RestAssuredPost_CreateUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

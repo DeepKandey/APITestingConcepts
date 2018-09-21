@@ -35,6 +35,5 @@ public class RestAssuredGet_SingleUser {
 
 		String restResponseAsString = restResponse.getBody().asString();
 		System.out.println("Rest Response in Body-->" + restResponseAsString);
-
 	}
 }

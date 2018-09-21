@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;

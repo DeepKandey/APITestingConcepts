@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2524" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
+  <suite name="Default suite" duration-ms="3710" started-at="2018-09-21T18:26:54Z" finished-at="2018-09-21T18:26:57Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2524" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
-      <class name="com.qa.restAPI.RestAssuredGet_SingleUser">
-        <test-method status="PASS" signature="getSingleUserDetails()[pri:0, instance:com.qa.restAPI.RestAssuredGet_SingleUser@61832929]" name="getSingleUserDetails" duration-ms="2500" started-at="2018-09-18T03:57:09Z" finished-at="2018-09-18T03:57:11Z">
+    <test name="Default test" duration-ms="3710" started-at="2018-09-21T18:26:54Z" finished-at="2018-09-21T18:26:57Z">
+      <class name="com.qa.restAPI.RestAssuredPost_CreateUser">
+        <test-method status="PASS" signature="createUser()[pri:0, instance:com.qa.restAPI.RestAssuredPost_CreateUser@61832929]" name="createUser" duration-ms="3669" started-at="2018-09-21T18:26:54Z" finished-at="2018-09-21T18:26:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getSingleUserDetails -->
-      </class> <!-- com.qa.restAPI.RestAssuredGet_SingleUser -->
+        </test-method> <!-- createUser -->
+      </class> <!-- com.qa.restAPI.RestAssuredPost_CreateUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
