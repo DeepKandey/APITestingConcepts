@@ -41,7 +41,7 @@ public class HttpGet_SingleUser {
 		JSONObject jsonObject = (JSONObject) parser.parse(jsonString);
 
 		// Printing JSON data response having data set in a single JSON object
-		Map userData = (Map) jsonObject.get("data");
+		Map<String,String> userData = (Map<String,String>) jsonObject.get("data");
 
 		Iterator<Map.Entry<String, String>> userDetail = userData.entrySet().iterator();
 		while (userDetail.hasNext()) {
@@ -49,5 +49,4 @@ public class HttpGet_SingleUser {
 			System.out.println(detail.getKey() + " = " + detail.getValue());
 		}
 	}
-
 }

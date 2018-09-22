@@ -31,10 +31,10 @@ public class HttpPost_CreateUser {
 		Gson gson = new Gson();
 
 		// 4.Creating object of POJO class
-		CreateUser user = new CreateUser("Deepak", "Washing");
+		CreateUser userInJSONRequest = new CreateUser("Deepak", "Washing");
 
-		// 5. Converting POJO object into JSON String - marshelling
-		String jsonString = gson.toJson(user); // gson.tojson() converts your POJO to JSON
+		// 5. Converting POJO object into JSON String - marshelling/serialization
+		String jsonString = gson.toJson(userInJSONRequest); // gson.tojson() converts your POJO to JSON
 
 		System.out.println("JSON String-->" + jsonString);
 
@@ -59,16 +59,14 @@ public class HttpPost_CreateUser {
 		if (responseEntity != null) {
 			jsonStringResponse = EntityUtils.toString(responseEntity, "UTF-8");
 		}
-
 		System.out.println(jsonStringResponse);
 
-		// Converting JSON string Response into POJO --unmarshelling
-		CreateUser userinJSON = gson.fromJson(jsonStringResponse, CreateUser.class);
-		System.out.println(userinJSON);
-		System.out.println(userinJSON.getCreatedAt());
-		System.out.println(userinJSON.getName() + " " + user.getName());
-		Assert.assertEquals(userinJSON.getName(), user.getName());
+		// Converting JSON string Response into POJO --unmarshelling/deserialization
+		CreateUser userInJSONResponse = gson.fromJson(jsonStringResponse, CreateUser.class);
+		System.out.println(userInJSONResponse);
+		System.out.println("Created At-->" + userInJSONResponse.getCreatedAt());
+		System.out.println(userInJSONResponse.getName() + " " + userInJSONRequest.getName());
+		Assert.assertEquals(userInJSONResponse.getName(), userInJSONRequest.getName());
 
 	}
-
 }
