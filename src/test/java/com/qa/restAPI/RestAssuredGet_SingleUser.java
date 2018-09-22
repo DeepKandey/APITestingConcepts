@@ -1,9 +1,8 @@
 package com.qa.restAPI;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.json.simple.JSONObject;
@@ -46,11 +45,9 @@ public class RestAssuredGet_SingleUser {
 		JSONObject jsonStringResponse = (JSONObject) parser.parse(restResponseAsString);
 
 		// 7. Iterating through the user Details
-		Map<String, String> singleUserData = (Map<String, String>) jsonStringResponse.get("data");
-		Iterator<Map.Entry<String, String>> userDetails = singleUserData.entrySet().iterator();
-		while (userDetails.hasNext()) {
-			Entry userKeyValueMap = userDetails.next();
-			System.out.println("Key: " + userKeyValueMap.getKey() + " ,Value: " + userKeyValueMap.getValue());
+		HashMap<String, String> singleUserData = (HashMap<String, String>) jsonStringResponse.get("data");
+		for (Entry userDetailsEntry : singleUserData.entrySet()) {
+			System.out.println("Key: " + userDetailsEntry.getKey() + " ,Value: " + userDetailsEntry.getValue());
 		}
 	}
 }
