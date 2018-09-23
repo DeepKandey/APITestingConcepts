@@ -1,17 +1,16 @@
 package com.qa.http;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
-
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -20,8 +19,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
-
-import com.google.gson.Gson;
 
 public class HttpGet_ListUsers {
 
@@ -68,32 +65,26 @@ public class HttpGet_ListUsers {
 		System.out.println(totalPages);
 
 		// Printing JSON array in the respsone
+
+		// 1. One Way to print details
 		JSONArray dataArray = (JSONArray) jsonObject.get("data");
-
 		for (int i = 0; i < dataArray.size(); i++) {
-			JSONObject objects = (JSONObject) dataArray.get(i);
-
-			Set keyValue = objects.keySet();
-			Iterator keySet = keyValue.iterator();
-			while (keySet.hasNext()) {
-				String key = keySet.next().toString();
-				System.out.println("Key : " + key + ", Value : " + objects.get(key));
+			HashMap<String, String> KeyValuePair = (HashMap<String, String>) dataArray.get(i);
+			for (Entry userDetail : KeyValuePair.entrySet()) {
+				System.out.println("Key : " + userDetail.getKey() + " : " + userDetail.getValue());
 			}
 		}
 
 		System.out.println("--------------------------------------------------");
 
-		// getting user details
+		// 2. Second Way to print details
 		JSONArray jsonArray = (JSONArray) jsonObject.get("data");
-
-		// iterating phoneNumbers
-		Iterator itr2 = jsonArray.iterator();
-
-		while (itr2.hasNext()) {
-			Iterator itr1 = ((Map) itr2.next()).entrySet().iterator();
-			while (itr1.hasNext()) {
-				Map.Entry pair = (Entry) itr1.next();
-				System.out.println("Key : "+ pair.getKey() + " : " + pair.getValue());
+		Iterator UsersDataArray = jsonArray.iterator();
+		while (UsersDataArray.hasNext()) {
+			Iterator userData = ((Map) UsersDataArray.next()).entrySet().iterator();
+			while (userData.hasNext()) {
+				Map.Entry pair = (Entry) userData.next();
+				System.out.println("Key : " + pair.getKey() + " : " + pair.getValue());
 			}
 		}
 		// 3. Ignoring Jackson API as it requires creation of POJO
