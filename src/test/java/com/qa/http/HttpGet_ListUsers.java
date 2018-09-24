@@ -67,6 +67,7 @@ public class HttpGet_ListUsers {
 		// Printing JSON array in the respsone
 
 		// 1. One Way to print details
+		System.out.println("--------------------One Way------------------------------");
 		JSONArray dataArray = (JSONArray) jsonObject.get("data");
 		for (int i = 0; i < dataArray.size(); i++) {
 			HashMap<String, String> KeyValuePair = (HashMap<String, String>) dataArray.get(i);
@@ -75,7 +76,7 @@ public class HttpGet_ListUsers {
 			}
 		}
 
-		System.out.println("--------------------------------------------------");
+		System.out.println("--------------------2nd Way------------------------------");
 
 		// 2. Second Way to print details
 		JSONArray jsonArray = (JSONArray) jsonObject.get("data");

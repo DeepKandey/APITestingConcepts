@@ -2,6 +2,7 @@ package com.qa.restAPI;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +12,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import junit.framework.Assert;
 
 public class RestAssuredPost_CreateUser {
 
@@ -32,7 +32,7 @@ public class RestAssuredPost_CreateUser {
 		String jsonStringRequest = mapper.writeValueAsString(userRequest);
 
 		// 5. Passing JSON Payload in restClient
-		restClient.body("JSON String Request Payload-->" + jsonStringRequest);
+		restClient.body(jsonStringRequest);
 
 		// 6. Rest Response
 		Response restResponse = restClient.request(Method.POST, "/api/users");
@@ -41,7 +41,7 @@ public class RestAssuredPost_CreateUser {
 		System.out.println(restResponse.getStatusCode());
 
 		// 8. Getting jsonStringResponse
-		String jsonStringResponse = restResponse.body().asString();
+		String jsonStringResponse = restResponse.getBody().asString();
 		System.out.println("JSON String Response Payload-->" + jsonStringResponse);
 
 		// 9. Deserialization fron JsonString to POJO

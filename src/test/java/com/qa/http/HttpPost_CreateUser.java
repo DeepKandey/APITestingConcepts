@@ -63,7 +63,7 @@ public class HttpPost_CreateUser {
 
 		// Converting JSON string Response into POJO --unmarshelling/deserialization
 		CreateUser userInJSONResponse = gson.fromJson(jsonStringResponse, CreateUser.class);
-		System.out.println(userInJSONResponse);
+		// System.out.println(userInJSONResponse.toString());
 		System.out.println("Created At-->" + userInJSONResponse.getCreatedAt());
 		System.out.println(userInJSONResponse.getName() + " " + userInJSONRequest.getName());
 		Assert.assertEquals(userInJSONResponse.getName(), userInJSONRequest.getName());
