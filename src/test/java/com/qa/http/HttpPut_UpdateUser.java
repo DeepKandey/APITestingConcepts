@@ -1,9 +1,10 @@
 package com.qa.http;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpHeaders;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPut;
@@ -30,9 +31,19 @@ public class HttpPut_UpdateUser {
 		String jsonStringRequest = mapper.writeValueAsString(updateUserRequest);
 		System.out.println(jsonStringRequest);
 
-		// HttpEntity entity = new StringEntity(jsonStringRequest);
-		httpPut.setEntity(new StringEntity(jsonStringRequest));
-		httpPut.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+		// Using HashMap to add header to the PUT request
+		HashMap<String, String> headerMap = new HashMap<String, String>();
+		headerMap.put("Content-type", "application/json");
+
+		for (Entry<String, String> header : headerMap.entrySet()) {
+			httpPut.setHeader(header.getKey(), header.getValue());
+		}
+
+		// Direct way of adding header :-
+		// httpPut.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+
+		HttpEntity entity = new StringEntity(jsonStringRequest);
+		httpPut.setEntity(entity);
 
 		CloseableHttpResponse httpResponse = httpRequest.execute(httpPut);
 
@@ -47,7 +58,7 @@ public class HttpPut_UpdateUser {
 		System.out.println(responseBody);
 
 		UpdateUser updateUserResponse = mapper.readValue(responseBody, UpdateUser.class);
-		// System.out.println(updateUserResponse.getJob());
-
+		System.out.println(updateUserResponse.getJob());
+		Assert.assertNotNull(updateUserResponse.getUpdatedAt()); //validating if UpdatedAt is not null
 	}
 }

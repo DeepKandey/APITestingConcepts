@@ -45,13 +45,13 @@ public class HttpPost_CreateUser {
 		httpPost.setEntity(payLoad);
 
 		// 8. Setting Header
-		httpPost.setHeader("Content-type", "application/json");
+		httpPost.setHeader("content-type", "application/json");
 
 		// 9. Executing HTTPPOST request
 		CloseableHttpResponse httpResponse = httpClient.execute(httpPost);
 
 		// 10. Reading Status Line
-		System.out.println(httpResponse.getStatusLine());
+		System.out.println("Status Line-->" + httpResponse.getStatusLine());
 
 		// 11. Consuming response body
 		String jsonStringResponse = null;
@@ -59,13 +59,14 @@ public class HttpPost_CreateUser {
 		if (responseEntity != null) {
 			jsonStringResponse = EntityUtils.toString(responseEntity, "UTF-8");
 		}
-		System.out.println(jsonStringResponse);
+		System.out.println("Response Body-->" + jsonStringResponse);
 
 		// Converting JSON string Response into POJO --unmarshelling/deserialization
 		CreateUser userInJSONResponse = gson.fromJson(jsonStringResponse, CreateUser.class);
-		// System.out.println(userInJSONResponse.toString());
+
 		System.out.println("Created At-->" + userInJSONResponse.getCreatedAt());
 		System.out.println(userInJSONResponse.getName() + " " + userInJSONRequest.getName());
+		
 		Assert.assertEquals(userInJSONResponse.getName(), userInJSONRequest.getName());
 
 	}

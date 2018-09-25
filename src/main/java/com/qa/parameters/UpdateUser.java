@@ -3,7 +3,7 @@ package com.qa.parameters;
 public class UpdateUser {
 	String name;
 	String job;
-	String UpdatedAt;
+	String updatedAt;
 
 	public UpdateUser() {
 	}
@@ -30,10 +30,10 @@ public class UpdateUser {
 	}
 
 	public String getUpdatedAt() {
-		return UpdatedAt;
+		return updatedAt;
 	}
 
-	public void setUpdatedAt(String UpdatedAt) {
-		this.UpdatedAt = UpdatedAt;
+	public void setUpdatedAt(String updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 }

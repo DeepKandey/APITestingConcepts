@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2479" started-at="2018-09-24T18:21:20Z" finished-at="2018-09-24T18:21:22Z">
+  <suite name="Default suite" duration-ms="4062" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2479" started-at="2018-09-24T18:21:20Z" finished-at="2018-09-24T18:21:22Z">
-      <class name="com.qa.http.HttpPut_UpdateUser">
-        <test-method status="PASS" signature="updateUserTest()[pri:0, instance:com.qa.http.HttpPut_UpdateUser@5c3bd550]" name="updateUserTest" duration-ms="2451" started-at="2018-09-24T18:21:20Z" finished-at="2018-09-24T18:21:22Z">
+    <test name="Default test" duration-ms="4062" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
+      <class name="com.qa.restAPI.RestAssuredPut_UpdateUser">
+        <test-method status="PASS" signature="updateUserTest()[pri:0, instance:com.qa.restAPI.RestAssuredPut_UpdateUser@61832929]" name="updateUserTest" duration-ms="4033" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- updateUserTest -->
-      </class> <!-- com.qa.http.HttpPut_UpdateUser -->
+      </class> <!-- com.qa.restAPI.RestAssuredPut_UpdateUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
