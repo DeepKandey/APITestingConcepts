@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4062" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
+  <suite name="Default suite" duration-ms="3723" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4062" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
-      <class name="com.qa.restAPI.RestAssuredPut_UpdateUser">
-        <test-method status="PASS" signature="updateUserTest()[pri:0, instance:com.qa.restAPI.RestAssuredPut_UpdateUser@61832929]" name="updateUserTest" duration-ms="4033" started-at="2018-09-25T04:16:30Z" finished-at="2018-09-25T04:16:34Z">
+    <test name="Default test" duration-ms="3723" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
+      <class name="com.qa.restAPI.RestAssuredDelete_DeleteUser">
+        <test-method status="PASS" signature="deleteUserTest()[pri:0, instance:com.qa.restAPI.RestAssuredDelete_DeleteUser@61832929]" name="deleteUserTest" duration-ms="3697" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUserTest -->
-      </class> <!-- com.qa.restAPI.RestAssuredPut_UpdateUser -->
+        </test-method> <!-- deleteUserTest -->
+      </class> <!-- com.qa.restAPI.RestAssuredDelete_DeleteUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

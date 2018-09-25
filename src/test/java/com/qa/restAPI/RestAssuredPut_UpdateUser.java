@@ -49,8 +49,6 @@ public class RestAssuredPut_UpdateUser {
 		
 		// Validating Name and updatedAt fields
 		Assert.assertEquals(updateUserResponse.getName(), updateUserRequest.getName());
-		Assert.assertNotNull(updateUserResponse.getUpdatedAt());
-
+		Assert.assertNotNull(updateUserResponse.getUpdatedAt()); //UpdatedAt should not be null
 	}
-
 }

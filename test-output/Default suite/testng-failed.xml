@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.restAPI.RestAssuredPut_UpdateUser">
+      <class name="com.qa.restAPI.RestAssuredDelete_DeleteUser">
         <methods>
-          <include name="updateUserTest"/>
+          <include name="deleteUserTest"/>
         </methods>
-      </class> <!-- com.qa.restAPI.RestAssuredPut_UpdateUser -->
+      </class> <!-- com.qa.restAPI.RestAssuredDelete_DeleteUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
