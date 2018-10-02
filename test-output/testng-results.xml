@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3723" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
+  <suite name="Default suite" duration-ms="3182" started-at="2018-10-02T14:25:25Z" finished-at="2018-10-02T14:25:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3723" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
-      <class name="com.qa.restAPI.RestAssuredDelete_DeleteUser">
-        <test-method status="PASS" signature="deleteUserTest()[pri:0, instance:com.qa.restAPI.RestAssuredDelete_DeleteUser@61832929]" name="deleteUserTest" duration-ms="3697" started-at="2018-09-25T17:38:14Z" finished-at="2018-09-25T17:38:18Z">
+    <test name="Default test" duration-ms="3182" started-at="2018-10-02T14:25:25Z" finished-at="2018-10-02T14:25:28Z">
+      <class name="com.qa.restAPI.RestAssuredGet_CountryDetails">
+        <test-method status="PASS" signature="getCountryDetails()[pri:0, instance:com.qa.restAPI.RestAssuredGet_CountryDetails@ae45eb6]" name="getCountryDetails" duration-ms="3155" started-at="2018-10-02T14:25:25Z" finished-at="2018-10-02T14:25:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteUserTest -->
-      </class> <!-- com.qa.restAPI.RestAssuredDelete_DeleteUser -->
+        </test-method> <!-- getCountryDetails -->
+      </class> <!-- com.qa.restAPI.RestAssuredGet_CountryDetails -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

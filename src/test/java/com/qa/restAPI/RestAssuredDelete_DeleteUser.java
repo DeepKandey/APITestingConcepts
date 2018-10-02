@@ -33,5 +33,4 @@ public class RestAssuredDelete_DeleteUser {
 			System.out.println(header.getName() + " = " + header.getValue());
 		}
 	}
-
 }
