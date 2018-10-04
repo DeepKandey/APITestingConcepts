@@ -1,4 +1,4 @@
-package com.qa.restAPI;
+package com.qa.restAssured;
 
 import java.util.ArrayList;
 import java.util.HashMap;

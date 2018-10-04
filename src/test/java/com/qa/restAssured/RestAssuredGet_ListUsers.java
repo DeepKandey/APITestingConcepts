@@ -1,4 +1,4 @@
-package com.qa.restAPI;
+package com.qa.restAssured;
 
 import java.util.Iterator;
 import java.util.Map;

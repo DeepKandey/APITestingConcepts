@@ -1,4 +1,4 @@
-package com.qa.restAPI;
+package com.qa.restAssured;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
