@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
-public class RestAssuredBDD_GetWaeatherDetails {
+public class RestAssuredBDD_GetWeatherDetails {
 
 	@Test
 	public void getWeatherDetailsWithSingleParam() {
