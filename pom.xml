@@ -20,14 +20,14 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20180130</version>
+			<version>20190722</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
-			<version>3.1.1</version>
+			<version>4.1.2</version>
 			<scope>test</scope>
 		</dependency>
 
