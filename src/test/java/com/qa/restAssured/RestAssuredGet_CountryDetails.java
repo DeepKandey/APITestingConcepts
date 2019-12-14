@@ -79,5 +79,4 @@ public class RestAssuredGet_CountryDetails {
 			}
 		}
 	}
-
 }
