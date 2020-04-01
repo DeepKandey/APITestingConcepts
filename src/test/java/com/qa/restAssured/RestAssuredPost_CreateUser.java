@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.parameters.CreateUser;
+import com.qa.pojo.CreateUserDetails;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -34,7 +34,7 @@ public class RestAssuredPost_CreateUser {
 		}
 
 		// 3. Creating object of User Class
-		CreateUser userRequest = new CreateUser("Deepak", "Cleaning");
+		CreateUserDetails userRequest = new CreateUserDetails("Deepak", "Cleaning");
 
 		// 4. Object Mapper to serialize Java Objects into JSON String
 		ObjectMapper mapper = new ObjectMapper();
@@ -55,7 +55,7 @@ public class RestAssuredPost_CreateUser {
 		System.out.println("JSON String Response Payload-->" + jsonStringResponse);
 
 		// 9. Deserialization fron JsonString to POJO
-		CreateUser userResponse = mapper.readValue(jsonStringResponse, CreateUser.class);
+		CreateUserDetails userResponse = mapper.readValue(jsonStringResponse, CreateUserDetails.class);
 		System.out.println("User id-->" + userResponse.getId());
 
 		// 10. Comparing Name passed in Request and Name received in Response

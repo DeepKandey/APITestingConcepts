@@ -17,6 +17,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredGet_CountryDetails {
 
+	@SuppressWarnings("unchecked")
 	@Test
 	public void getCountryDetails() throws ParseException {
 		RestAssured.baseURI = "https://restcountries.eu";

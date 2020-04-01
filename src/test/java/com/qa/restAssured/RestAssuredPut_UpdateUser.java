@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
-import com.qa.parameters.UpdateUser;
+import com.qa.pojo.UpdateUserDetails;
 
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
@@ -28,7 +28,7 @@ public class RestAssuredPut_UpdateUser {
 			restRequest.header(entry.getKey(), entry.getValue());
 		}
 
-		UpdateUser updateUserRequest = new UpdateUser("Deepak", "Automation");
+		UpdateUserDetails updateUserRequest = new UpdateUserDetails("Deepak", "Automation");
 
 		Gson gson = new Gson();
 		String jsonStringRequest = gson.toJson(updateUserRequest);
@@ -45,7 +45,7 @@ public class RestAssuredPut_UpdateUser {
 		System.out.println("JSON String Response Body-->" + responseBody);
 
 		// Unmarshelling
-		UpdateUser updateUserResponse = gson.fromJson(responseBody, UpdateUser.class);
+		UpdateUserDetails updateUserResponse = gson.fromJson(responseBody, UpdateUserDetails.class);
 		
 		// Validating Name and updatedAt fields
 		Assert.assertEquals(updateUserResponse.getName(), updateUserRequest.getName());

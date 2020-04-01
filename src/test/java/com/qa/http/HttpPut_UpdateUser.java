@@ -16,7 +16,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qa.parameters.UpdateUser;
+import com.qa.pojo.UpdateUserDetails;
 
 public class HttpPut_UpdateUser {
 
@@ -25,7 +25,7 @@ public class HttpPut_UpdateUser {
 		CloseableHttpClient httpRequest = HttpClients.createDefault();
 		HttpPut httpPut = new HttpPut("https://reqres.in/api/users/2");
 
-		UpdateUser updateUserRequest = new UpdateUser("Pankaj", "Testing");
+		UpdateUserDetails updateUserRequest = new UpdateUserDetails("Pankaj", "Testing");
 
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonStringRequest = mapper.writeValueAsString(updateUserRequest);
@@ -57,7 +57,7 @@ public class HttpPut_UpdateUser {
 		}
 		System.out.println(responseBody);
 
-		UpdateUser updateUserResponse = mapper.readValue(responseBody, UpdateUser.class);
+		UpdateUserDetails updateUserResponse = mapper.readValue(responseBody, UpdateUserDetails.class);
 		System.out.println(updateUserResponse.getJob());
 		Assert.assertNotNull(updateUserResponse.getUpdatedAt()); //validating if UpdatedAt is not null
 	}

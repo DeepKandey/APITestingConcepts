@@ -14,7 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
-import com.qa.parameters.CreateUser;
+import com.qa.pojo.CreateUserDetails;
 
 public class HttpPost_CreateUser {
 
@@ -31,7 +31,7 @@ public class HttpPost_CreateUser {
 		Gson gson = new Gson();
 
 		// 4.Creating object of POJO class
-		CreateUser userInJSONRequest = new CreateUser("Deepak", "Washing");
+		CreateUserDetails userInJSONRequest = new CreateUserDetails("Deepak", "Washing");
 
 		// 5. Converting POJO object into JSON String - marshelling/serialization
 		String jsonString = gson.toJson(userInJSONRequest); // gson.tojson() converts your POJO to JSON
@@ -62,7 +62,7 @@ public class HttpPost_CreateUser {
 		System.out.println("Response Body-->" + jsonStringResponse);
 
 		// Converting JSON string Response into POJO --unmarshelling/deserialization
-		CreateUser userInJSONResponse = gson.fromJson(jsonStringResponse, CreateUser.class);
+		CreateUserDetails userInJSONResponse = gson.fromJson(jsonStringResponse, CreateUserDetails.class);
 
 		System.out.println("Created At-->" + userInJSONResponse.getCreatedAt());
 		System.out.println(userInJSONResponse.getName() + " " + userInJSONRequest.getName());

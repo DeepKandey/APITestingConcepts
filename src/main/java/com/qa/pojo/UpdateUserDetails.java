@@ -1,14 +1,14 @@
-package com.qa.parameters;
+package com.qa.pojo;
 
-public class UpdateUser {
+public class UpdateUserDetails {
 	String name;
 	String job;
 	String updatedAt;
 
-	public UpdateUser() {
+	public UpdateUserDetails() {
 	}
 
-	public UpdateUser(String name, String job) {
+	public UpdateUserDetails(String name, String job) {
 		this.name = name;
 		this.job = job;
 	}

@@ -63,7 +63,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.0.0</version>
-			<scope>compile</scope>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->

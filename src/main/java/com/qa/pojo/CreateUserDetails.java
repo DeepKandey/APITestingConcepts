@@ -1,15 +1,15 @@
-package com.qa.parameters;
+package com.qa.pojo;
 
-public class CreateUser {
+public class CreateUserDetails {
 	String name;
 	String job;
 	String id;
 	String createdAt;
 
-	public CreateUser() {
+	public CreateUserDetails() {
 	}
 
-	public CreateUser(String name, String job) {
+	public CreateUserDetails(String name, String job) {
 		this.name = name;
 		this.job = job;
 	}
