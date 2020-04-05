@@ -19,6 +19,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredGet_SingleUser {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public void getSingleUserDetails() throws ParseException {
 

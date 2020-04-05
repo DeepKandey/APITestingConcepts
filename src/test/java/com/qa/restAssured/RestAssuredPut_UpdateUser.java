@@ -20,10 +20,9 @@ public class RestAssuredPut_UpdateUser {
 	public void updateUserTest() {
 		RestAssured.baseURI = "https://reqres.in/api/users/2";
 		RequestSpecification restRequest = RestAssured.given();
-
+		// Add Header
 		HashMap<String, String> headerMap = new HashMap<String, String>();
 		headerMap.put("content-type", "application/json");
-
 		for (Entry<String, String> entry : headerMap.entrySet()) {
 			restRequest.header(entry.getKey(), entry.getValue());
 		}

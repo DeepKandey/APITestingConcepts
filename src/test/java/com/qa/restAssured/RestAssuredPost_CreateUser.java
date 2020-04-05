@@ -22,13 +22,11 @@ public class RestAssuredPost_CreateUser {
 
 		// 1. Base URI
 		RestAssured.baseURI = "https://reqres.in";
-
 		// 2. CretingRest Client
 		RequestSpecification restClient = RestAssured.given();
-
+		// Add Header
 		HashMap<String, String> headerMap = new HashMap<String, String>();
 		headerMap.put("content-type", "application/json");
-
 		for (Entry<String, String> entry : headerMap.entrySet()) {
 			restClient.header(entry.getKey(), entry.getValue());
 		}
