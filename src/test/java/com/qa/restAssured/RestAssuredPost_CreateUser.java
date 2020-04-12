@@ -1,62 +1,56 @@
 package com.qa.restAssured;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qa.constants.CommonAPIConstants;
 import com.qa.pojo.CreateUserDetails;
+import com.qa.util.RestCommonMethods;
 
-import io.restassured.RestAssured;
-import io.restassured.http.Method;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredPost_CreateUser {
 
 	@Test
 	public void createUser() throws IOException {
 
-		// 1. Base URI
-		RestAssured.baseURI = "https://reqres.in";
-		// 2. CretingRest Client
-		RequestSpecification restClient = RestAssured.given();
-		// Add Header
-		HashMap<String, String> headerMap = new HashMap<String, String>();
-		headerMap.put("content-type", "application/json");
-		for (Entry<String, String> entry : headerMap.entrySet()) {
-			restClient.header(entry.getKey(), entry.getValue());
-		}
+		// Declare Variables
+		String userName = "Deepak";
+		String job = "Cleaning";
 
-		// 3. Creating object of User Class
-		CreateUserDetails userRequest = new CreateUserDetails("Deepak", "Cleaning");
-
-		// 4. Object Mapper to serialize Java Objects into JSON String
+		// Serialize POJO into JSON String | marshalling
+		CreateUserDetails userRequest = new CreateUserDetails(userName, job);
 		ObjectMapper mapper = new ObjectMapper();
-		String jsonStringRequest = mapper.writeValueAsString(userRequest);
-		System.out.println("JSON string Request Payload-->" + jsonStringRequest);
+		String jsonStringRequestBody = mapper.writeValueAsString(userRequest);
+		System.out.println("JSON string Request Payload-->" + jsonStringRequestBody);
 
-		// 5. Passing JSON Payload in restClient
-		restClient.body(jsonStringRequest);
+		// Headers details
+		Header h1 = new Header("content-type", "application/json");
+		List<Header> headerList = new ArrayList<Header>();
+		headerList.add(h1);
 
-		// 6. Rest Response
-		Response restResponse = restClient.request(Method.POST, "/api/users");
+		// Rest Response
+		Response restResponse = RestCommonMethods.postAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+				CommonAPIConstants.USERS_LIST_URL, headerList, jsonStringRequestBody);
 
-		// 7. Status Code in response
-		System.out.println("Status code-->" + restResponse.getStatusCode());
+		// Status Code in response
+		System.out.println("Status code--> " + restResponse.getStatusCode());
 
-		// 8. Getting jsonStringResponse
-		String jsonStringResponse = restResponse.getBody().asString();
-		System.out.println("JSON String Response Payload-->" + jsonStringResponse);
+		// Response Body
+		String jsonStringResponseBody = restResponse.getBody().asString();
+		System.out.println("JSON String Response Payload--> " + jsonStringResponseBody);
 
-		// 9. Deserialization fron JsonString to POJO
-		CreateUserDetails userResponse = mapper.readValue(jsonStringResponse, CreateUserDetails.class);
-		System.out.println("User id-->" + userResponse.getId());
+		// Deserialization from JsonString to POJO | unmarshalling
+		CreateUserDetails userResponse = mapper.readValue(jsonStringResponseBody, CreateUserDetails.class);
+		System.out.println("User id--> " + userResponse.getId());
 
-		// 10. Comparing Name passed in Request and Name received in Response
+		// Comparing Name passed in Request and Name received in Response
 		Assert.assertEquals(userRequest.getName(), userResponse.getName(), "Name does not match");
 	}
-}
+} // end of class RestAssuredPost_CreateUser

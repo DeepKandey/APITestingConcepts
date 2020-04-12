@@ -1,53 +1,50 @@
 package com.qa.restAssured;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
+import com.qa.constants.CommonAPIConstants;
 import com.qa.pojo.UpdateUserDetails;
+import com.qa.util.RestCommonMethods;
 
-import io.restassured.RestAssured;
-import io.restassured.http.Method;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 public class RestAssuredPut_UpdateUser {
 
 	@Test
 	public void updateUserTest() {
-		RestAssured.baseURI = "https://reqres.in/api/users/2";
-		RequestSpecification restRequest = RestAssured.given();
-		// Add Header
-		HashMap<String, String> headerMap = new HashMap<String, String>();
-		headerMap.put("content-type", "application/json");
-		for (Entry<String, String> entry : headerMap.entrySet()) {
-			restRequest.header(entry.getKey(), entry.getValue());
-		}
 
+		// Headers details
+		Header h1 = new Header("content-type", "application/json");
+		List<Header> headerList = new ArrayList<Header>();
+		headerList.add(h1);
+
+		// Serialize POJO into JSON String | marshalling
 		UpdateUserDetails updateUserRequest = new UpdateUserDetails("Deepak", "Automation");
-
 		Gson gson = new Gson();
-		String jsonStringRequest = gson.toJson(updateUserRequest);
-		System.out.println("Json String Request Payload-->" + jsonStringRequest);
+		String jsonStringRequestBody = gson.toJson(updateUserRequest);
+		System.out.println("Json String Request Payload--> " + jsonStringRequestBody);
 
-		restRequest.body(jsonStringRequest);
+		// Rest Response
+		Response restResponse = RestCommonMethods.putAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+				CommonAPIConstants.SINGLE_USERS_URL, headerList, jsonStringRequestBody);
 
-		Response restResponse = restRequest.request(Method.PUT);
+		// Validate Status Code
+		System.out.println("Status Code in Response--> " + restResponse.getStatusCode());
 
-		int StatusCode = restResponse.getStatusCode();
-		System.out.println("Status Code in Response-->" + StatusCode);
+		String jsonStringresponseBody = restResponse.getBody().asString();
+		System.out.println("JSON String Response Body--> " + jsonStringresponseBody);
 
-		String responseBody = restResponse.getBody().asString();
-		System.out.println("JSON String Response Body-->" + responseBody);
+		// Deserialization from JsonString to POJO | unmarshalling
+		UpdateUserDetails updateUserResponse = gson.fromJson(jsonStringresponseBody, UpdateUserDetails.class);
 
-		// Unmarshelling
-		UpdateUserDetails updateUserResponse = gson.fromJson(responseBody, UpdateUserDetails.class);
-		
-		// Validating Name and updatedAt fields
+		// Validate Name and updatedAt fields
 		Assert.assertEquals(updateUserResponse.getName(), updateUserRequest.getName());
-		Assert.assertNotNull(updateUserResponse.getUpdatedAt()); //UpdatedAt should not be null
+		Assert.assertNotNull(updateUserResponse.getUpdatedAt()); // UpdatedAt should not be null
 	}
 }
