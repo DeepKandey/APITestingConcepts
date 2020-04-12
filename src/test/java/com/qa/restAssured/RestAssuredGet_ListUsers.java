@@ -24,7 +24,7 @@ public class RestAssuredGet_ListUsers {
 	public void getlistOfUsersDetails() throws ParseException {
 
 		Response restResponse = RestCommonMethods.getAPIRequest(CommonConstants.REQRES_ENDPOINT_URI,
-				CommonConstants.USERS_LIST);
+				CommonConstants.USERS_LIST_URL);
 
 		// Status Line
 		System.out.println("Status Line--> " + restResponse.getStatusLine());
@@ -67,4 +67,4 @@ public class RestAssuredGet_ListUsers {
 			System.out.println();
 		}
 	}
-}
+}// End of class RestAssuredGet_ListUsers

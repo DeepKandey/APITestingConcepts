@@ -7,20 +7,22 @@ import io.restassured.specification.RequestSpecification;
 
 public class RestCommonMethods {
 
-	public static Response deleteAPIRequest(String endpointURI, String URL) {
+	private RestCommonMethods() {
+
+	}
+
+	public static Response deleteAPIRequest(String endpointURI, String deleteURL) {
 
 		RestAssured.baseURI = endpointURI;
 		RequestSpecification restClient = RestAssured.given();
-		Response restResponse = restClient.request(Method.DELETE, "/api/users/2");
-		return restResponse;
+		return restClient.request(Method.DELETE, deleteURL);
 	}
 
-	public static Response getAPIRequest(String endpointURI, String URL) {
+	public static Response getAPIRequest(String endpointURI, String getURL) {
 
 		RestAssured.baseURI = endpointURI;
 		RequestSpecification restClient = RestAssured.given();
 		restClient.headers("content-type", "application/json");
-		Response restResponse = restClient.request(Method.GET, URL);
-		return restResponse;
+		return restClient.request(Method.GET, getURL);
 	}
-}
+} // End of class RestCommonMethods
