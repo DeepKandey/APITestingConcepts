@@ -1,0 +1,81 @@
+[ {
+  "uid" : "124532fc8fdbf48b",
+  "name" : "getWeatherDetailsWithMultiParam",
+  "time" : {
+    "start" : 1587919450035,
+    "stop" : 1587919450845,
+    "duration" : 810
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ab4c32ec8232d895",
+  "name" : "getlistOfUsersDetails",
+  "time" : {
+    "start" : 1587919447835,
+    "stop" : 1587919450025,
+    "duration" : 2190
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d5148cee2f1bacbd",
+  "name" : "getCountryDetails",
+  "time" : {
+    "start" : 1587919446677,
+    "stop" : 1587919447817,
+    "duration" : 1140
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bf1c18792c7bda6b",
+  "name" : "deleteUserTest",
+  "time" : {
+    "start" : 1587919445679,
+    "stop" : 1587919446644,
+    "duration" : 965
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6019539b0ef6f910",
+  "name" : "getSingleUserDetails",
+  "time" : {
+    "start" : 1587919444382,
+    "stop" : 1587919445664,
+    "duration" : 1282
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "db94ed60efff5d41",
+  "name" : "getWeatherDetailsWithSingleParam",
+  "time" : {
+    "start" : 1587919450853,
+    "stop" : 1587919451021,
+    "duration" : 168
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4cabcd9b91b7e7cf",
+  "name" : "createUser",
+  "time" : {
+    "start" : 1587919438741,
+    "stop" : 1587919444321,
+    "duration" : 5580
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4e8dd4770ac56cb5",
+  "name" : "updateUserTest",
+  "time" : {
+    "start" : 1587919451056,
+    "stop" : 1587919452188,
+    "duration" : 1132
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

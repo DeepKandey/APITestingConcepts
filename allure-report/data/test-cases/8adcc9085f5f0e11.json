@@ -1,0 +1,60 @@
+{
+  "uid" : "8adcc9085f5f0e11",
+  "name" : "createUser",
+  "fullName" : "com.qa.restAssured.RestAssuredPost_CreateUser.createUser",
+  "historyId" : "bfd9dcf7004632cc52117c27f432f72",
+  "time" : {
+    "start" : 1587919097966,
+    "stop" : 1587919110855,
+    "duration" : 12889
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.qa.restAssured.RestAssuredPost_CreateUser"
+  }, {
+    "name" : "testClass",
+    "value" : "com.qa.restAssured.RestAssuredPost_CreateUser"
+  }, {
+    "name" : "testMethod",
+    "value" : "createUser"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.qa.restAssured.RestAssuredPost_CreateUser"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-D7PUHMF"
+  }, {
+    "name" : "thread",
+    "value" : "4492@DESKTOP-D7PUHMF.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8adcc9085f5f0e11.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,145 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Suite",
+    "children" : [ {
+      "name" : "Test",
+      "children" : [ {
+        "name" : "com.qa.restAssured.RestAssuredPost_CreateUser",
+        "children" : [ {
+          "name" : "createUser",
+          "uid" : "4cabcd9b91b7e7cf",
+          "parentUid" : "53c97992bcab09a3474c0a150b961ecd",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919438741,
+            "stop" : 1587919444321,
+            "duration" : 5580
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "53c97992bcab09a3474c0a150b961ecd"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredGet_SingleUser",
+        "children" : [ {
+          "name" : "getSingleUserDetails",
+          "uid" : "6019539b0ef6f910",
+          "parentUid" : "537fd23d1d8c3b1eb772a2c33b0b08eb",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919444382,
+            "stop" : 1587919445664,
+            "duration" : 1282
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "537fd23d1d8c3b1eb772a2c33b0b08eb"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredDelete_DeleteUser",
+        "children" : [ {
+          "name" : "deleteUserTest",
+          "uid" : "bf1c18792c7bda6b",
+          "parentUid" : "b1e4fa8951c686cebd83c26af25d52bb",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919445679,
+            "stop" : 1587919446644,
+            "duration" : 965
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "b1e4fa8951c686cebd83c26af25d52bb"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredGet_CountryDetails",
+        "children" : [ {
+          "name" : "getCountryDetails",
+          "uid" : "d5148cee2f1bacbd",
+          "parentUid" : "c24c7c40ca8e7b85f6c59bf8046cb76c",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919446677,
+            "stop" : 1587919447817,
+            "duration" : 1140
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "c24c7c40ca8e7b85f6c59bf8046cb76c"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredGet_ListUsers",
+        "children" : [ {
+          "name" : "getlistOfUsersDetails",
+          "uid" : "ab4c32ec8232d895",
+          "parentUid" : "6e498212e035b59e818ce88a176bc2c5",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919447835,
+            "stop" : 1587919450025,
+            "duration" : 2190
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "6e498212e035b59e818ce88a176bc2c5"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredBDD_GetWeatherDetails",
+        "children" : [ {
+          "name" : "getWeatherDetailsWithMultiParam",
+          "uid" : "124532fc8fdbf48b",
+          "parentUid" : "d3a63a3fbe04813927571068a650c7d1",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919450035,
+            "stop" : 1587919450845,
+            "duration" : 810
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "getWeatherDetailsWithSingleParam",
+          "uid" : "db94ed60efff5d41",
+          "parentUid" : "d3a63a3fbe04813927571068a650c7d1",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919450853,
+            "stop" : 1587919451021,
+            "duration" : 168
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "d3a63a3fbe04813927571068a650c7d1"
+      }, {
+        "name" : "com.qa.restAssured.RestAssuredPut_UpdateUser",
+        "children" : [ {
+          "name" : "updateUserTest",
+          "uid" : "4e8dd4770ac56cb5",
+          "parentUid" : "7959892291ce62543ba8e6db007baaca",
+          "status" : "passed",
+          "time" : {
+            "start" : 1587919451056,
+            "stop" : 1587919452188,
+            "duration" : 1132
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "7959892291ce62543ba8e6db007baaca"
+      } ],
+      "uid" : "7314231e84d67a341867b5c9d3f928d2"
+    } ],
+    "uid" : "29f4dcc45a0e26cd7c7462063cee854b"
+  } ]
+}

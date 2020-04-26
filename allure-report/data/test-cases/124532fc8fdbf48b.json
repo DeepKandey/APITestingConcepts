@@ -1,0 +1,70 @@
+{
+  "uid" : "124532fc8fdbf48b",
+  "name" : "getWeatherDetailsWithMultiParam",
+  "fullName" : "com.qa.restAssured.RestAssuredBDD_GetWeatherDetails.getWeatherDetailsWithMultiParam",
+  "historyId" : "bd2d6a854843fdbe212744be4c9c3340",
+  "time" : {
+    "start" : 1587919450035,
+    "stop" : 1587919450845,
+    "duration" : 810
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.qa.restAssured.RestAssuredBDD_GetWeatherDetails"
+  }, {
+    "name" : "testClass",
+    "value" : "com.qa.restAssured.RestAssuredBDD_GetWeatherDetails"
+  }, {
+    "name" : "testMethod",
+    "value" : "getWeatherDetailsWithMultiParam"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.qa.restAssured.RestAssuredBDD_GetWeatherDetails"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-D7PUHMF"
+  }, {
+    "name" : "thread",
+    "value" : "29744@DESKTOP-D7PUHMF.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "bac785039063062c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1587919118982,
+        "stop" : 1587919120295,
+        "duration" : 1313
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "124532fc8fdbf48b.json",
+  "parameterValues" : [ ]
+}

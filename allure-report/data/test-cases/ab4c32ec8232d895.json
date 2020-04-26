@@ -1,0 +1,70 @@
+{
+  "uid" : "ab4c32ec8232d895",
+  "name" : "getlistOfUsersDetails",
+  "fullName" : "com.qa.restAssured.RestAssuredGet_ListUsers.getlistOfUsersDetails",
+  "historyId" : "393cef9d3bd6118866728bdeefb5f922",
+  "time" : {
+    "start" : 1587919447835,
+    "stop" : 1587919450025,
+    "duration" : 2190
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.qa.restAssured.RestAssuredGet_ListUsers"
+  }, {
+    "name" : "testClass",
+    "value" : "com.qa.restAssured.RestAssuredGet_ListUsers"
+  }, {
+    "name" : "testMethod",
+    "value" : "getlistOfUsersDetails"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.qa.restAssured.RestAssuredGet_ListUsers"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-D7PUHMF"
+  }, {
+    "name" : "thread",
+    "value" : "29744@DESKTOP-D7PUHMF.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "743c66a357cbcc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1587919114500,
+        "stop" : 1587919118974,
+        "duration" : 4474
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ab4c32ec8232d895.json",
+  "parameterValues" : [ ]
+}
