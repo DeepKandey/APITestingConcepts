@@ -19,7 +19,6 @@ import io.restassured.response.Response;
 
 public class RestAssuredGet_CountryDetails {
 
-	@SuppressWarnings("unchecked")
 	@Test
 	public void getCountryDetails() throws ParseException {
 

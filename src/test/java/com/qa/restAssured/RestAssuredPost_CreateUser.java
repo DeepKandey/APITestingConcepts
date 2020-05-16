@@ -26,6 +26,7 @@ public class RestAssuredPost_CreateUser {
 
 		// Serialize POJO into JSON String | marshalling
 		CreateUserDetails userRequest = new CreateUserDetails(userName, job);
+		
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonStringRequestBody = mapper.writeValueAsString(userRequest);
 		System.out.println("JSON string Request Payload-->" + jsonStringRequestBody);

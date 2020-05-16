@@ -9,23 +9,17 @@ public class RestAssuredBDD_GetWeatherDetails {
 
 	@Test
 	public void getWeatherDetailsWithSingleParam() {
-		given().
-		        params("q", "Pune", "APPID","e049e82235e635d751effb42b7a7adae").
-		when().
-		        get("http://api.openweathermap.org/data/2.5/weather").
-		then().
-		       body("sys.country", equalTo("IN"));
-		
+		given().log().all().params("q", "Pune", "APPID", "e049e82235e635d751effb42b7a7adae").when().log().all()
+				.get("http://api.openweathermap.org/data/2.5/weather").then().log().all()
+				.body("sys.country", equalTo("IN"));
+
 	}
-	
+
 	@Test
 	public void getWeatherDetailsWithMultiParam() {
-		given().
-		        params("q", "Pune", "mode", "xml", "APPID","e049e82235e635d751effb42b7a7adae").
-		when().
-		        get("http://api.openweathermap.org/data/2.5/weather").
-		then().
-		       body("current.city.country", equalTo("IN"));
-		
+		given().log().all().params("q", "Pune", "mode", "xml", "APPID", "e049e82235e635d751effb42b7a7adae").when().log()
+				.all().get("http://api.openweathermap.org/data/2.5/weather").then().log().all()
+				.body("current.city.country", equalTo("IN"));
+
 	}
 }

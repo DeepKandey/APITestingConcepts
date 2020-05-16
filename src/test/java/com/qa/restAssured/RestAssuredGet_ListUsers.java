@@ -20,7 +20,6 @@ import io.restassured.response.Response;
 
 public class RestAssuredGet_ListUsers {
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
 	public void getlistOfUsersDetails() throws ParseException {
 
