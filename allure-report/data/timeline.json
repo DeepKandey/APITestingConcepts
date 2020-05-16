@@ -1,0 +1,225 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-D7PUHMF",
+    "children" : [ {
+      "name" : "29744@DESKTOP-D7PUHMF.main(1)",
+      "children" : [ {
+        "name" : "getCountryDetails",
+        "uid" : "d5148cee2f1bacbd",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919446677,
+          "stop" : 1587919447817,
+          "duration" : 1140
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "createUser",
+        "uid" : "4cabcd9b91b7e7cf",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919438741,
+          "stop" : 1587919444321,
+          "duration" : 5580
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getWeatherDetailsWithSingleParam",
+        "uid" : "db94ed60efff5d41",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919450853,
+          "stop" : 1587919451021,
+          "duration" : 168
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "deleteUserTest",
+        "uid" : "bf1c18792c7bda6b",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919445679,
+          "stop" : 1587919446644,
+          "duration" : 965
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getWeatherDetailsWithMultiParam",
+        "uid" : "124532fc8fdbf48b",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919450035,
+          "stop" : 1587919450845,
+          "duration" : 810
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getSingleUserDetails",
+        "uid" : "6019539b0ef6f910",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919444382,
+          "stop" : 1587919445664,
+          "duration" : 1282
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getlistOfUsersDetails",
+        "uid" : "ab4c32ec8232d895",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919447835,
+          "stop" : 1587919450025,
+          "duration" : 2190
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateUserTest",
+        "uid" : "4e8dd4770ac56cb5",
+        "parentUid" : "16ce72ea16654881cc841dfbaa94c0f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919451056,
+          "stop" : 1587919452188,
+          "duration" : 1132
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "16ce72ea16654881cc841dfbaa94c0f6"
+    }, {
+      "name" : "4492@DESKTOP-D7PUHMF.main(1)",
+      "children" : [ {
+        "name" : "getWeatherDetailsWithSingleParam",
+        "uid" : "b4736bf90a307822",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919120327,
+          "stop" : 1587919121010,
+          "duration" : 683
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getlistOfUsersDetails",
+        "uid" : "743c66a357cbcc",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919114500,
+          "stop" : 1587919118974,
+          "duration" : 4474
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getCountryDetails",
+        "uid" : "2f16909f3c5507d3",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919113356,
+          "stop" : 1587919114489,
+          "duration" : 1133
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getSingleUserDetails",
+        "uid" : "2c74ee61a678c12f",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919110990,
+          "stop" : 1587919112340,
+          "duration" : 1350
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "updateUserTest",
+        "uid" : "ae6bba353c8c3fa7",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919121026,
+          "stop" : 1587919122266,
+          "duration" : 1240
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "createUser",
+        "uid" : "8adcc9085f5f0e11",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919097966,
+          "stop" : 1587919110855,
+          "duration" : 12889
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "deleteUserTest",
+        "uid" : "54172aa7c9de972d",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919112354,
+          "stop" : 1587919113315,
+          "duration" : 961
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "getWeatherDetailsWithMultiParam",
+        "uid" : "bac785039063062c",
+        "parentUid" : "a9831ef44175ba40597557a28421cf46",
+        "status" : "passed",
+        "time" : {
+          "start" : 1587919118982,
+          "stop" : 1587919120295,
+          "duration" : 1313
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a9831ef44175ba40597557a28421cf46"
+    } ],
+    "uid" : "1e5ec3b0a078e0b9c2e17a67ccfeb1dd"
+  } ]
+}

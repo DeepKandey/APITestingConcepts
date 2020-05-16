@@ -1,0 +1,70 @@
+{
+  "uid" : "bf1c18792c7bda6b",
+  "name" : "deleteUserTest",
+  "fullName" : "com.qa.restAssured.RestAssuredDelete_DeleteUser.deleteUserTest",
+  "historyId" : "3aafaef56385a7ebe998f499c0e1aa59",
+  "time" : {
+    "start" : 1587919445679,
+    "stop" : 1587919446644,
+    "duration" : 965
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.qa.restAssured.RestAssuredDelete_DeleteUser"
+  }, {
+    "name" : "testClass",
+    "value" : "com.qa.restAssured.RestAssuredDelete_DeleteUser"
+  }, {
+    "name" : "testMethod",
+    "value" : "deleteUserTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.qa.restAssured.RestAssuredDelete_DeleteUser"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-D7PUHMF"
+  }, {
+    "name" : "thread",
+    "value" : "29744@DESKTOP-D7PUHMF.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "54172aa7c9de972d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1587919112354,
+        "stop" : 1587919113315,
+        "duration" : 961
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "bf1c18792c7bda6b.json",
+  "parameterValues" : [ ]
+}
