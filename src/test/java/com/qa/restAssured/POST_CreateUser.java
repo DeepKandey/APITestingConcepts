@@ -15,7 +15,7 @@ import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 
-public class RestAssuredPost_CreateUser {
+public class POST_CreateUser {
 
 	@Test
 	public void createUser() throws IOException {

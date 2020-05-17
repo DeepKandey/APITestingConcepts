@@ -20,7 +20,7 @@ import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HttpGet_CountryDetails {
+public class GET_CountryDetails {
 
 	@Test
 	public void getCountryDetails() throws ClientProtocolException, IOException, ParseException {

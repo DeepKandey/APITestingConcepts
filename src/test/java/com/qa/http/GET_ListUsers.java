@@ -20,7 +20,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-public class HttpGet_ListUsers {
+public class GET_ListUsers {
 
 	@Test
 	public void getListOfUsersDetails() throws ClientProtocolException, IOException, ParseException {

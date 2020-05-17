@@ -10,7 +10,7 @@ import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
 
-public class RestAssuredDelete_DeleteUser {
+public class DELETE_DeleteUser {
 
 	@Test
 	public void deleteUserTest() {

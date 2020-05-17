@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.pojo.UpdateUserDetails;
 
-public class HttpPut_UpdateUser {
+public class PUT_UpdateUser {
 
 	@Test
 	public void updateUserTest() throws ClientProtocolException, IOException {

@@ -18,7 +18,7 @@ import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class RestAssuredGet_ListUsers {
+public class GET_ListUsers {
 
 	@Test
 	public void getlistOfUsersDetails() throws ParseException {

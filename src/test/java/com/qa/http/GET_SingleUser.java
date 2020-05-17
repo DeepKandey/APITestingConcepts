@@ -18,7 +18,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-public class HttpGet_SingleUser {
+public class GET_SingleUser {
 
 	@Test
 	public void getSingleUserDetails() throws ClientProtocolException, IOException, ParseException {

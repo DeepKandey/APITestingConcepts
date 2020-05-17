@@ -14,7 +14,7 @@ import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 
-public class RestAssuredPut_UpdateUser {
+public class PUT_UpdateUser {
 
 	@Test
 	public void updateUserTest() {

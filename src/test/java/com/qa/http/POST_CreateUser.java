@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import com.google.gson.Gson;
 import com.qa.pojo.CreateUserDetails;
 
-public class HttpPost_CreateUser {
+public class POST_CreateUser {
 
 	@Test
 	public void createUser() throws ClientProtocolException, IOException {

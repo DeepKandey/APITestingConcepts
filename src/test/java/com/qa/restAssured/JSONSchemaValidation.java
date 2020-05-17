@@ -21,7 +21,7 @@ import io.restassured.response.ValidatableResponse;
  * @author deepak
  *
  */
-public class RestAssuredJSONSchemaValidation {
+public class JSONSchemaValidation {
 
 	@Test
 	public void validateJSONSchemaForSingleUser() {

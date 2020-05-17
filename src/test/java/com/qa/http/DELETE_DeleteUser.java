@@ -12,7 +12,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HttpDelete_DeleteUser {
+public class DELETE_DeleteUser {
 
 	@Test
 	public void deleteUser() throws ClientProtocolException, IOException {

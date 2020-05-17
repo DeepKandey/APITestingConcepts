@@ -17,7 +17,7 @@ import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 
-public class RestAssuredGet_CountryDetails {
+public class GET_CountryDetails {
 
 	@Test
 	public void getCountryDetails() throws ParseException {
