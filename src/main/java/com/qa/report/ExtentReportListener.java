@@ -18,6 +18,10 @@ public class ExtentReportListener implements ITestListener {
 	private static ExtentReports extent = ExtentManager.createInstance();
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
+	public static synchronized ExtentTest getExtentTest() {
+		return test.get();
+	}
+
 	@Override
 	public void onTestStart(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " started!"));

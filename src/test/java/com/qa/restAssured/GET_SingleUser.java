@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.constants.CommonAPIConstants;
 import com.qa.util.RestCommonMethods;
 
@@ -34,11 +35,14 @@ public class GET_SingleUser {
 		System.out.println("Response Body in json:-");
 		restResponse.body().prettyPrint();
 
-		// 6. Parsing data in Response Body
+		ObjectMapper objectMapper= new ObjectMapper();
+		
+		
+		// 2. Parsing data in Response Body
 		JSONParser parser = new JSONParser();
 		JSONObject jsonStringResponse = (JSONObject) parser.parse(restResponse.getBody().asString());
 
-		// 7. Iterating through the user Details
+		// 3. Iterating through the user Details
 		HashMap<String, String> singleUserData = (HashMap<String, String>) jsonStringResponse.get("data");
 		for (Entry userDetailsEntry : singleUserData.entrySet()) {
 			System.out.println(userDetailsEntry.getKey() + " = " + userDetailsEntry.getValue());
