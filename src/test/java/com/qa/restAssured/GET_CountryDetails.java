@@ -27,8 +27,8 @@ public class GET_CountryDetails {
 		List<Header> headerList = new ArrayList<Header>();
 		headerList.add(h1);
 
-		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.RESTCOUNTRIES_ENDPOINT_URI,
-				CommonAPIConstants.WASHINGTON_COUNTRY_URI, headerList);
+		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.RESTCOUNTRIES_ENDPOINT_URL,
+				CommonAPIConstants.WASHINGTON_COUNTRY_URL, headerList);
 
 		// Status Line
 		System.out.println("Status Line--> " + restResponse.getStatusLine());

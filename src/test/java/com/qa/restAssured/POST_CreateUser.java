@@ -24,9 +24,10 @@ public class POST_CreateUser {
 		String userName = "Deepak";
 		String job = "Cleaning";
 
-		// Serialize POJO into JSON String | marshalling
+		// Create POJO object
 		CreateUserDetails userRequest = new CreateUserDetails(userName, job);
 		
+		// Serialize POJO into JSON String | marshalling
 		ObjectMapper mapper = new ObjectMapper();
 		String jsonStringRequestBody = mapper.writeValueAsString(userRequest);
 		System.out.println("JSON string Request Payload-->" + jsonStringRequestBody);
@@ -37,7 +38,7 @@ public class POST_CreateUser {
 		headerList.add(h1);
 
 		// Rest Response
-		Response restResponse = RestCommonMethods.postAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+		Response restResponse = RestCommonMethods.postAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URL,
 				CommonAPIConstants.USERS_LIST_URL, headerList, jsonStringRequestBody);
 
 		// Status Code in response

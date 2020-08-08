@@ -31,7 +31,7 @@ public class JSONSchemaValidation {
 		List<Header> headerList = new ArrayList<Header>();
 		headerList.add(h1);
 
-		Response response = RestCommonMethods.getAPIRequest(CommonAPIConstants.GOREST_ENDPOINT_URI,
+		Response response = RestCommonMethods.getAPIRequest(CommonAPIConstants.GOREST_ENDPOINT_URL,
 				CommonAPIConstants.SINGLE_USER_URL_GOREST, headerList);
 
 		// Validate response schema

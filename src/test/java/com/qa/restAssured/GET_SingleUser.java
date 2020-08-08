@@ -28,16 +28,13 @@ public class GET_SingleUser {
 		List<Header> headerList = new ArrayList<Header>();
 		headerList.add(h1);
 
-		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URL,
 				CommonAPIConstants.SINGLE_USERS_URL, headerList);
 
 		// 1. Response Body as String
 		System.out.println("Response Body in json:-");
 		restResponse.body().prettyPrint();
 
-		ObjectMapper objectMapper= new ObjectMapper();
-		
-		
 		// 2. Parsing data in Response Body
 		JSONParser parser = new JSONParser();
 		JSONObject jsonStringResponse = (JSONObject) parser.parse(restResponse.getBody().asString());

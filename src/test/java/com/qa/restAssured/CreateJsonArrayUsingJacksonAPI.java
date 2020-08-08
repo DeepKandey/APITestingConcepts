@@ -13,10 +13,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-/**
- * @author Deepak Rai
- *
- */
 public class CreateJsonArrayUsingJacksonAPI {
 
 	@Test
@@ -66,7 +62,7 @@ public class CreateJsonArrayUsingJacksonAPI {
 
 		secondBookingDetails.set("bookingdates", secondBookingDatedetails);
 
-		// Add Json Objects to Json Array
+		// Add JSON Objects to JSON Array
 		parentArray.add(firstBookingDetails);
 		parentArray.add(secondBookingDetails);
 
@@ -80,7 +76,7 @@ public class CreateJsonArrayUsingJacksonAPI {
 
 		System.out.println("=======================================================================================");
 
-		// To get json array element using index
+		// To get JSON array element using index
 		JsonNode firstElement = parentArray.get(0);
 		System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(firstElement));
 

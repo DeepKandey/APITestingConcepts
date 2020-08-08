@@ -31,7 +31,7 @@ public class PUT_UpdateUser {
 		System.out.println("Json String Request Payload--> " + jsonStringRequestBody);
 
 		// Rest Response
-		Response restResponse = RestCommonMethods.putAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+		Response restResponse = RestCommonMethods.putAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URL,
 				CommonAPIConstants.SINGLE_USERS_URL, headerList, jsonStringRequestBody);
 
 		// Validate Status Code

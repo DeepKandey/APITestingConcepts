@@ -23,7 +23,7 @@ public class GET_ListUsers {
 	@Test
 	public void getlistOfUsersDetails() throws ParseException {
 
-		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+		Response restResponse = RestCommonMethods.getAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URL,
 				CommonAPIConstants.USERS_LIST_URL,Collections.<Header>emptyList());
 
 		// Status Line

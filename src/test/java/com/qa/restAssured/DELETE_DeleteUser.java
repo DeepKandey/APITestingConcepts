@@ -14,7 +14,7 @@ public class DELETE_DeleteUser {
 
 	@Test
 	public void deleteUserTest() {
-		Response restResponse = RestCommonMethods.deleteAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URI,
+		Response restResponse = RestCommonMethods.deleteAPIRequest(CommonAPIConstants.REQRES_ENDPOINT_URL,
 				CommonAPIConstants.SINGLE_USERS_URL);
 
 		// Validate Status code
