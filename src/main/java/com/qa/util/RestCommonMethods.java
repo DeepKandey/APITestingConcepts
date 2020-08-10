@@ -17,7 +17,7 @@ public class RestCommonMethods {
 	/**
 	 * 
 		 * {@summary method to execute get API request}
-		 * @param endpointURI, getURL, headersList
+		 * @param endpointURI, serviceURL, headersList
 		 * @return Response
 		 * @author deepak rai
 	 */
@@ -34,7 +34,7 @@ public class RestCommonMethods {
 	/**
 	 * 
 		 * {@summary method to execute post API request}
-		 * @param endpointURI, posURL, headersList
+		 * @param endpointURI, serviceURL, headersList
 		 * @return Response
 		 * @author deepak rai
 	 */
@@ -54,14 +54,14 @@ public class RestCommonMethods {
 	/**
 	 * 
 		 * {@summary method to execute put API request}
-		 * @param endpointURI, putURL, headersList
+		 * @param endpointURI, serviceURL, headersList
 		 * @return Response
 		 * @author deepak rai
 	 */
-	public static Response putAPIRequest(String endpointURI, String serviceURL, List<Header> headersList,
+	public static Response putAPIRequest(String endpointURL, String serviceURL, List<Header> headersList,
 			String jsonRequestBody) {
 		
-		RestAssured.baseURI = endpointURI;
+		RestAssured.baseURI = endpointURL;
 		RequestSpecification restClient = RestAssured.given();
 		restClient.headers("content-type", "application/json");
 		Headers headers = new Headers(headersList);
@@ -74,13 +74,13 @@ public class RestCommonMethods {
 	/**
 	 * 
 		 * {@summary method to execute delete API request}
-		 * @param endpointURI, getURL, headersList
+		 * @param endpointURI, serviceURL
 		 * @return Response
 		 * @author deepak rai
 	 */
-	public static Response deleteAPIRequest(String endpointURI, String serviceURL) {
+	public static Response deleteAPIRequest(String endpointURL, String serviceURL) {
 		
-		RestAssured.baseURI = endpointURI;
+		RestAssured.baseURI = endpointURL;
 		RequestSpecification restClient = RestAssured.given();
 		return restClient.request(Method.DELETE, serviceURL);
 		
