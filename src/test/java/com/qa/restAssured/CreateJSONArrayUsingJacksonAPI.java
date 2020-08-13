@@ -13,10 +13,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-public class CreateJsonArrayUsingJacksonAPI {
+public class CreateJSONArrayUsingJacksonAPI {
 
 	@Test
-	public void createJsonArray() throws JsonProcessingException {
+	private void createJsonArray() throws JsonProcessingException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 

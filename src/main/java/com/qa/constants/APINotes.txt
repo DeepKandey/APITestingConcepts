@@ -1,0 +1,45 @@
+RestAssured is a class which consists many static fields and methods.
+
+It supports POST, GET, PUT, DELETE, HEAD, PATCH and OPTIONS requests and to verify the response of these requests.
+
+RestAssured has a static overloaded method named get() which returns a reference of Response interface. 
+In fact return type of all http methods in RestAssured class is of type Response. 
+This response contains every details returned by hitting request i.e. response body, response headers, status code, 
+status lines, cookies etc.
+
+To validate response like status code or value , we need to get reference of type ValidatableResponse. 
+ValidatableResponse is an interface. Response interface has a method named “then()” which returns ValidatableResponse. 
+
+In fact there is an interface called “Validatable” which has “then()” method. Response interface extends
+Validatable Interface. The implemented class of Response interface is RestAssuredResponseImpl. 
+
+By default REST assured assumes host localhost and port 8080 when doing a request. 
+It means if we not provide any host and port, it will take default values. It is an interview question.
+
+If you just want to retrieve response time in milliseconds or other time units,
+you need to use time(), getTime(), timeIn(TimeUnit timeunit), getTimeIn( TimeUnit timeunit ) from Response interface. 
+Response interface inherits these methods from ResponseOptions. You can not use Matchers in above methods.
+
+If you want to use Matchers i.e. assertion like response time is greater than a specific value, 
+you need to use overloaded time() methods from ValidatableResponse which inherits time() method from 
+ValidatableResponseOptions interface.
+
+JSON stands for “JavaScript Object Notation” which is a lightweight , language independent and self describing format 
+in text for data storing and interchange. JSON is easy to read, write and create for humans which makes it famous over
+XML.
+
+JSON was derived from JavaScript but now it is supported by many languages. 
+A file containing JSON is saved using “.json” extension.
+
+JSON is majorly used to exchange data between Web Server and Client.
+
+JSON can be found in two formats :- JSON Object and JSON Array. Example shown above is a JSON Object.
+
+A JSON Object is an unordered data structure which starts with opening braces ( ‘{‘) and ends with a closing braces 
+(‘}’). A JSON Array is a ordered collection which starts with opening bracket ( ‘[‘) and ends with a closing bracket(‘]’). 
+A JSON array consists of values separated by comma. A JSON array can be hold multiple JSON Objects as well.
+
+Jackson API is a high performance JSON processor for Java. We can perform serialization, de-serialization , 
+reading a JSON file, writing a JSON file and a lot more things using Jackson API.
+
+ ObjectMapper provides functionalities for reading and writing JSON.
