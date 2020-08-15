@@ -1,0 +1,46 @@
+{
+  "companyName" : "Sync",
+  "companyHOCity" : "Pune",
+  "companyCEO" : "Deepak",
+  "supportedSalaryBanks" : [ "HDFC", "ICICI", "AXIS" ],
+  "pincodesOfCityOffice" : [ 560037, 360034, 456343 ],
+  "employee" : [ {
+    "firstName" : "Gunjan",
+    "lastName" : "Saxena",
+    "gender" : "Male",
+    "age" : 29,
+    "salary" : 3434343.0,
+    "married" : false
+  }, {
+    "firstName" : "Deepak",
+    "lastName" : "Rai",
+    "gender" : "Male",
+    "age" : 29,
+    "salary" : 3434343.0,
+    "married" : false
+  }, {
+    "firstName" : "Pankaj",
+    "lastName" : "Yadav",
+    "gender" : "Male",
+    "age" : 29,
+    "salary" : 3434343.0,
+    "married" : false
+  } ],
+  "contractors" : [ {
+    "firstName" : "Seema",
+    "lastName" : "Singh",
+    "contractFrom" : "Jan-2019",
+    "contractTo" : "JAN-2025"
+  }, {
+    "firstName" : "Hari",
+    "lastName" : "Prasad",
+    "contractFrom" : "Jan-2017",
+    "contractTo" : "JAN-2030"
+  } ],
+  "companyPFDeails" : {
+    "pfName" : "XYZ",
+    "pfCity" : "Benagluru",
+    "pfYear" : 2012,
+    "noOfEmployees" : 10
+  }
+}
