@@ -1,6 +1,3 @@
-/**
- * @author Deepak Rai
- */
 package com.qa.restAssured;
 
 import java.util.concurrent.TimeUnit;
@@ -17,11 +14,9 @@ import io.restassured.specification.RequestSpecification;
 public class RequestSpecBuilderExample {
 
 	/**
-	 * {@summary Create RequestSpecification using RequestSpecificBuilder. Get and
+	 * {summary Create RequestSpecification using RequestSpecificBuilder. Get and
 	 * Validate Response time}
 	 * 
-	 * @param
-	 * @return
 	 * @author deepak rai
 	 */
 	@Test

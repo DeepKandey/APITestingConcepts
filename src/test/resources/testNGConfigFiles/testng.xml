@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <listeners>
+        <listener class-name="com.qa.report.ExtentReportListener"/>
+        <listener class-name="com.qa.report.AllureReportListener"/>
+        <listener class-name="com.qa.report.TesultsReportListener"/>
+    </listeners>
+
+    <test thread-count="5" name="Test">
+        <classes>
+            <class name="com.qa.restAssured.POST_CreateUser"/>
+            <class name="com.qa.restAssured.GET_SingleUser"/>
+            <class name="com.qa.restAssured.DELETE_DeleteUser"/>
+            <class name="com.qa.restAssured.GET_CountryDetails"/>
+            <class name="com.qa.restAssured.GET_ListUsers"/>
+            <class name="com.qa.restAssured.BDD_GetWeatherDetails"/>
+            <class name="com.qa.restAssured.PUT_UpdateUser"/>
+
+            <!-- <class name="com.qa.http.GET_ListUsers" />
+            <class name="com.qa.http.DELETE_DeleteUser"/>
+            <class name="com.qa.http.GET_SingleUser"/>
+            <class name="com.qa.http.HttpPost_CreateUser"/>
+            <class name="com.qa.http.GET_CountryDetails"/>
+            <class name="com.qa.http.HttpPut_UpdateUser"/> -->
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
