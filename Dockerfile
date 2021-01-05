@@ -1,7 +1,5 @@
 FROM openjdk:14-jdk-alpine3.10
 
-RUN apk add curl jq
-
 #workspace
 WORKDIR /usr/share/APITesting_Practice
 

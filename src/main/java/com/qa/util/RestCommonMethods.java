@@ -13,9 +13,9 @@ public class RestCommonMethods {
   private RestCommonMethods() {}
 
   /**
-   * {@summary method to execute get API request}
+   * {summary method to execute get API request}
    *
-   * @param endpointURI, serviceURL, headersList
+   * @param endpointURL, serviceURL, headersList
    * @return Response
    * @author deepak rai
    */
@@ -30,9 +30,9 @@ public class RestCommonMethods {
   }
 
   /**
-   * {@summary method to execute post API request}
+   * {summary method to execute post API request}
    *
-   * @param endpointURI, serviceURL, headersList
+   * @param endpointURL, serviceURL, headersList
    * @return Response
    * @author deepak rai
    */
@@ -49,9 +49,9 @@ public class RestCommonMethods {
   }
 
   /**
-   * {@summary method to execute put API request}
+   * {summary method to execute put API request}
    *
-   * @param endpointURI, serviceURL, headersList
+   * @param endpointURL,serviceURL,headersList PUT API parameters
    * @return Response
    * @author deepak rai
    */
@@ -68,9 +68,9 @@ public class RestCommonMethods {
   }
 
   /**
-   * {@summary method to execute delete API request}
+   * {summary method to execute delete API request}
    *
-   * @param endpointURI, serviceURL
+   * @param endpointURL, serviceURL
    * @return Response
    * @author deepak rai
    */

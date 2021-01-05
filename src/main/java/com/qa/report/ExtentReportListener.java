@@ -17,7 +17,11 @@ public class ExtentReportListener implements ITestListener {
   private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 
   public static synchronized ExtentTest getExtentTest() {
-    return test.get();
+    try {
+      return test.get();
+    } catch (Exception e) {
+      return null;
+    }
   }
 
   @Override
