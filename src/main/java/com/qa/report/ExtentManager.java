@@ -11,17 +11,17 @@ public class ExtentManager {
 
   private static ExtentReports extent;
   private static Platform platform;
-  private static Date date = new Date();
-  private static String reportFileName = "Extent_" + date.toString().replaceAll(":", "_") + ".html";
-  private static String windowsPath = System.getProperty("user.dir") + "/test-output";
-  // private static String macPath = System.getProperty("user.dir")+
-  // "/TestReport";
-  private static String winReportFileLoc = windowsPath + "/" + reportFileName;
-  // private static String macReportFileLoc = macPath + "/" + reportFileName;
+  private static final Date date = new Date();
+  private static final String reportFileName = "Extent_" + date.toString().replaceAll(":", "_") + ".html";
+  private static final String windowsPath = System.getProperty("user.dir") + "/test-output";
+  private static final String linuxPath = System.getProperty("user.dir") + "/test-output";
+  private static final String macPath = System.getProperty("user.dir") + "/TestReport";
+  private static final String winReportFileLoc = windowsPath + "/" + reportFileName;
+  private static final String linuxReportFileLoc = linuxPath + "/" + reportFileName;
+  private static final String macReportFileLoc = macPath + "/" + reportFileName;
 
   public static ExtentReports getInstance() {
     if (extent == null) {
-
       createInstance();
     }
     return extent;
@@ -51,18 +51,22 @@ public class ExtentManager {
   private static String getReportFileLocation(Platform platform) {
     String reportFileLocation = null;
     switch (platform) {
-        /*
-         * case MAC: reportFileLocation = macReportFileLoc; createReportPath(macPath);
-         * System.out.println("ExtentReport Path for MAC: " + macPath + "\n"); break;
-         */
-      case WIN10:
+      case MAC -> {
+        reportFileLocation = macReportFileLoc;
+        createReportPath(macPath);
+        System.out.println("ExtentReport Path for MAC: " + macPath + "\n");
+      }
+      case WIN10 -> {
         reportFileLocation = winReportFileLoc;
         createReportPath(windowsPath);
         System.out.println("ExtentReport Path for WINDOWS: " + windowsPath + "\n");
-        break;
-      default:
-        System.out.println("ExtentReport path has not been set! There is a problem!\n");
-        break;
+      }
+      case LINUX -> {
+        reportFileLocation = linuxReportFileLoc;
+        createReportPath(linuxPath);
+        System.out.println("ExtentReport Path for LINUX: " + linuxPath + "\n");
+      }
+      default -> System.out.println("ExtentReport path has not been set! There is a problem!\n");
     }
     return reportFileLocation;
   } // End of method getReportFileLocation

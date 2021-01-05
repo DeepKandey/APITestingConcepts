@@ -43,3 +43,9 @@ Jackson API is a high performance JSON processor for Java. We can perform serial
 reading a JSON file, writing a JSON file and a lot more things using Jackson API.
 
  ObjectMapper provides functionalities for reading and writing JSON.
+
+--Command to run tests from jar files in target folder
+ java -cp APITesting_Practice.jar;APITesting_Practice-tests.jar;libs/* org.testng.TestNG ../src/test/resources/testNGConfigFiles/testng.x
+ml
+--Command to run Dockerfile
+docker run -it deepkandey/apitesting_practice
