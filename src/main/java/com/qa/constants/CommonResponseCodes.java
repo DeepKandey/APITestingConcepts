@@ -1,4 +1,4 @@
-/** @author Deepak Rai */
+/* @author Deepak Rai */
 package com.qa.constants;
 
 public class CommonResponseCodes {
@@ -8,20 +8,18 @@ public class CommonResponseCodes {
   public static final int RESPONSE_CODE_200 = 200; // OK. Everything worked as expected.
 
   public static final int RESPONSE_CODE_201 =
-      201; // A resource was successfully created in response to a POST
-  // request.
+      201; // A resource was successfully created in response to a POST request.
 
   public static final int RESPONSE_CODE_204 =
-      204; // The request was handled successfully and the response contains
-  // no body content (like a DELETE request).
+      204; // The request was handled successfully and the response contains no body content (like a
+  // DELETE request).
 
   public static final int RESPONSE_CODE_304 =
       304; // The resource was not modified. You can use the cached version.
 
   public static final int RESPONSE_CODE_400 =
-      400; // Bad request. This could be caused by various actions by the
-  // user, such as providing invalid JSON data in the request
-  // body, providing invalid action parameters, etc.
+      400; // Bad request. This could be caused by various actions by the user, such as providing
+  // invalid JSON data in the request body, providing invalid action parameters, etc.
 
   public static final int RESPONSE_CODE_401 = 401; // Authentication failed.
 

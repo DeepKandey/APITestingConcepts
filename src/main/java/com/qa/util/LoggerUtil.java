@@ -19,10 +19,9 @@ public class LoggerUtil {
   }
 
   /**
-   * {@summary this method logs messages on console, Allure Report and Extent Report}
+   * {summary this method logs messages on console, Allure Report and Extent Report}
    *
-   * @param message
-   * @return void
+   * @param message logging message
    * @author deepak
    */
   public static void log(String message) {
