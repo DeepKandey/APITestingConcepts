@@ -2,12 +2,15 @@
 package com.qa.restAssured;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.testng.annotations.Test;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class CreateNestedJSONFromPOJOClasses {
 
@@ -83,16 +86,16 @@ public class CreateNestedJSONFromPOJOClasses {
 
     CompanyPFDeails companyPFDeails = new CompanyPFDeails();
     companyPFDeails.setPfName("XYZ");
-    companyPFDeails.setPfCity("Benagluru");
+    companyPFDeails.setPfCity("Bengaluru");
     companyPFDeails.setPfYear(2012);
     companyPFDeails.setNoOfEmployees(10);
-    nestedPOJO.setCompanyPFDeails(companyPFDeails);
+    nestedPOJO.setCompanyPFDetails(companyPFDeails);
 
     // POJO to JSON string
     ObjectMapper objMapper = new ObjectMapper();
     String nestedJSONPayLoad =
         objMapper.writerWithDefaultPrettyPrinter().writeValueAsString(nestedPOJO);
-    System.out.println(nestedJSONPayLoad);
+    log(nestedJSONPayLoad);
 
     // write POJO to JSON File
     String userDir = System.getProperty("user.dir");
@@ -250,7 +253,7 @@ class NestedPOJO {
     return companyPFDeails;
   }
 
-  public void setCompanyPFDeails(CompanyPFDeails companyPFDeails) {
+  public void setCompanyPFDetails(CompanyPFDeails companyPFDeails) {
     this.companyPFDeails = companyPFDeails;
   }
 }

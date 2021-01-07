@@ -5,10 +5,13 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import java.util.Arrays;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.util.Arrays;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class ExtentReportListener implements ITestListener {
 
@@ -26,21 +29,21 @@ public class ExtentReportListener implements ITestListener {
 
   @Override
   public void onTestStart(ITestResult result) {
-    System.out.println((result.getMethod().getMethodName() + " started!"));
     ExtentTest extentTest =
         extent.createTest(result.getMethod().getMethodName(), result.getMethod().getDescription());
     test.set(extentTest);
+    log(result.getMethod().getMethodName() + " started!");
   }
 
   @Override
   public void onTestSuccess(ITestResult result) {
-    System.out.println((result.getMethod().getMethodName() + " passed!"));
+    log((result.getMethod().getMethodName() + " passed!"));
     test.get().pass("Test Case Passed");
   }
 
   @Override
   public void onTestFailure(ITestResult result) {
-    System.out.println((result.getMethod().getMethodName() + " failed!"));
+    log((result.getMethod().getMethodName() + " failed!"));
 
     String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
     test.get()
@@ -50,7 +53,7 @@ public class ExtentReportListener implements ITestListener {
                 + "<b>"
                 + "<font color="
                 + "red>"
-                + "Exception Occured:Click to see"
+                + "Exception Occurred:Click to see"
                 + "</font>"
                 + "</b>"
                 + "</summary>"
@@ -66,29 +69,24 @@ public class ExtentReportListener implements ITestListener {
 
   @Override
   public void onTestSkipped(ITestResult result) {
-    System.out.println((result.getMethod().getMethodName() + " skipped!"));
+    log((result.getMethod().getMethodName() + " skipped!"));
     test.get().skip("Test Case Skipped");
     test.get().skip(result.getThrowable());
   }
 
   @Override
   public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-    System.out.println(
-        ("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
+    log(("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
   }
 
   @Override
   public void onStart(ITestContext context) {
-    System.out.println(
-        "Extent Reports Version 4 Test Suite started! " + context.getOutputDirectory());
+    log("Extent Reports Version 4 Test Suite started! " + context.getOutputDirectory());
   }
 
   @Override
   public void onFinish(ITestContext context) {
-    System.out.println("Extent Reports Version 4  Test Suite is ending!");
-    System.out.println("This is onFinish method. Passed Tests: " + context.getPassedTests());
-    System.out.println("This is onFinish method. Failed Test: " + context.getFailedTests());
-    System.out.println("This is onFinish method. Skipped Test: " + context.getSkippedTests());
+    log("Extent Reports Version 4  Test Suite is ending!");
     extent.flush();
     test.remove();
   }

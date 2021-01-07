@@ -5,10 +5,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.testng.annotations.Test;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class CreateJSONUsingPOJO {
 
@@ -50,7 +53,7 @@ public class CreateJSONUsingPOJO {
     // POJO as JSON
     String employeeJSON =
         objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(employeeObjAsRequest1);
-    System.out.println("\nEmployee POJO as JSON: \n" + employeeJSON);
+    log("\nEmployee POJO as JSON: \n" + employeeJSON);
 
     // POJO as JSON Array using ArrayNode
     ArrayNode node =
@@ -61,16 +64,16 @@ public class CreateJSONUsingPOJO {
             .addPOJO(employeeObjAsRequest3);
     String employeeJSONArray =
         objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(node);
-    System.out.println("\nEmployee POJO as JSON Array using ArrayNode: \n" + employeeJSONArray);
+    log("\nEmployee POJO as JSON Array using ArrayNode: \n" + employeeJSONArray);
 
     // Converting Employee JSON string to Employee class object
     Employee employeeObjAsResponse = objectMapper.readValue(employeeJSON, Employee.class);
-    System.out.println("\nFirst Name of employee : " + employeeObjAsResponse.getFirstName());
-    System.out.println("Last Name of employee : " + employeeObjAsResponse.getLastName());
-    System.out.println("Age of employee : " + employeeObjAsResponse.getAge());
-    System.out.println("Gender of employee : " + employeeObjAsResponse.getGender());
-    System.out.println("Salary of employee : " + employeeObjAsResponse.getSalary());
-    System.out.println("Marital status of employee : " + employeeObjAsResponse.getMarried());
+    log("\nFirst Name of employee : " + employeeObjAsResponse.getFirstName());
+    log("Last Name of employee : " + employeeObjAsResponse.getLastName());
+    log("Age of employee : " + employeeObjAsResponse.getAge());
+    log("Gender of employee : " + employeeObjAsResponse.getGender());
+    log("Salary of employee : " + employeeObjAsResponse.getSalary());
+    log("Marital status of employee : " + employeeObjAsResponse.getMarried());
 
     // Create a list of employees
     List<Employee> allEmployeesAsRequest = new ArrayList<>();
@@ -86,7 +89,7 @@ public class CreateJSONUsingPOJO {
     // (Serialize)
     String employeeListJSONArray =
         objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(allEmployeesAsRequest);
-    System.out.println("\nList of Employees POJO as JSON Array\n" + employeeListJSONArray);
+    log("\nList of Employees POJO as JSON Array\n" + employeeListJSONArray);
 
     // Converting Employee JSON Array string to Employee class object(De-serialize)
     List<Employee> allEmployeesAsResponse =
@@ -94,12 +97,12 @@ public class CreateJSONUsingPOJO {
 
     System.out.println("-----------Loop Emploee list--------");
     for (Employee employee : allEmployeesAsResponse) {
-      System.out.println("\nFirst Name of employee : " + employee.getFirstName());
-      System.out.println("Last Name of employee : " + employee.getLastName());
-      System.out.println("Age of employee : " + employee.getAge());
-      System.out.println("Gender of employee : " + employee.getGender());
-      System.out.println("Salary of employee : " + employee.getSalary());
-      System.out.println("Marital status of employee : " + employee.getMarried());
+      log("\nFirst Name of employee : " + employee.getFirstName());
+      log("Last Name of employee : " + employee.getLastName());
+      log("Age of employee : " + employee.getAge());
+      log("Gender of employee : " + employee.getGender());
+      log("Salary of employee : " + employee.getSalary());
+      log("Marital status of employee : " + employee.getMarried());
     }
   }
 }

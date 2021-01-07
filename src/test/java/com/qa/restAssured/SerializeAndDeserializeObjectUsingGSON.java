@@ -3,11 +3,14 @@ package com.qa.restAssured;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.testng.annotations.Test;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class SerializeAndDeserializeObjectUsingGSON {
   /**
@@ -33,14 +36,14 @@ public class SerializeAndDeserializeObjectUsingGSON {
     Gson gsonObj = new Gson();
     // toJson(object src) method converts Java object to JSON object
     String employeeJsonString = gsonObj.toJson(employeeObject);
-    System.out.println("Non-pretty JSON String");
-    System.out.println(employeeJsonString);
+    log("Non-pretty JSON String");
+    log(employeeJsonString);
 
     // We can create configurable Gson instance using GsonBuilder class
     Gson gsonBuilderObj = new GsonBuilder().setPrettyPrinting().create();
     String employeeJsonStringUsingGsonBuilder = gsonBuilderObj.toJson(employeeObject);
-    System.out.println("\npretty JSON String");
-    System.out.println(employeeJsonStringUsingGsonBuilder);
+    log("\npretty JSON String");
+    log(employeeJsonStringUsingGsonBuilder);
 
     // File write
     String userDir = System.getProperty("user.dir");
@@ -62,13 +65,13 @@ public class SerializeAndDeserializeObjectUsingGSON {
     double salary = employeeObjResponseFromJSONString.getSalary();
     boolean married = employeeObjResponseFromJSONString.getMarried();
 
-    System.out.println("\nDetails of Employee is as below:-");
-    System.out.println("First Name : " + firsName);
-    System.out.println("Last Name : " + lastName);
-    System.out.println("Gender : " + gender);
-    System.out.println("Age : " + age);
-    System.out.println("Salary : " + salary);
-    System.out.println("Married : " + married);
+    log("\nDetails of Employee is as below:-");
+    log("First Name : " + firsName);
+    log("Last Name : " + lastName);
+    log("Gender : " + gender);
+    log("Age : " + age);
+    log("Salary : " + salary);
+    log("Married : " + married);
 
     // deserialize from json file
     File inputJsonFile =
@@ -84,12 +87,12 @@ public class SerializeAndDeserializeObjectUsingGSON {
     double salary1 = employeeObjResponseFromJSONFile.getSalary();
     boolean married1 = employeeObjResponseFromJSONFile.getMarried();
 
-    System.out.println("\nDetails of Employee from json file is as below:-");
-    System.out.println("First Name : " + firsName1);
-    System.out.println("Last Name : " + lastName1);
-    System.out.println("Gender : " + gender1);
-    System.out.println("Age : " + age1);
-    System.out.println("Salary : " + salary1);
-    System.out.println("Married : " + married1);
+    log("\nDetails of Employee from json file is as below:-");
+    log("First Name : " + firsName1);
+    log("Last Name : " + lastName1);
+    log("Gender : " + gender1);
+    log("Age : " + age1);
+    log("Salary : " + salary1);
+    log("Married : " + married1);
   }
 }

@@ -8,7 +8,7 @@
         <listener class-name="com.qa.report.TesultsReportListener"/>
     </listeners>
 
-    <test thread-count="5" name="Test">
+    <test thread-count="6" name="Rest Assured Tests" parallel="methods">
         <classes>
             <class name="com.qa.restAssured.POST_CreateUser"/>
             <class name="com.qa.restAssured.GET_SingleUser"/>
@@ -20,7 +20,7 @@
 
             <!-- <class name="com.qa.http.GET_ListUsers" />
             <class name="com.qa.http.DELETE_DeleteUser"/>
-            <class name="com.qa.http.GET_SingleUser"/>
+            <class name="com.qa.http.GET_Si ngleUser"/>
             <class name="com.qa.http.HttpPost_CreateUser"/>
             <class name="com.qa.http.GET_CountryDetails"/>
             <class name="com.qa.http.HttpPut_UpdateUser"/> -->

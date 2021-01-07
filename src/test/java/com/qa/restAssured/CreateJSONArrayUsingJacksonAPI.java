@@ -6,8 +6,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import java.util.Iterator;
 import org.testng.annotations.Test;
+
+import java.util.Iterator;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class CreateJSONArrayUsingJacksonAPI {
 
@@ -68,34 +71,31 @@ public class CreateJSONArrayUsingJacksonAPI {
 
     String jsonArrayAsString =
         objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(parentArray);
-    System.out.println("Created JSON Array is: ");
-    System.out.println(jsonArrayAsString);
+    log("Created JSON Array is: ");
+    log(jsonArrayAsString);
 
     System.out.println(
         "=======================================================================================");
 
     // To get JSON array element using index
     JsonNode firstElement = parentArray.get(0);
-    System.out.println(
-        objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(firstElement));
+    log(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(firstElement));
 
     System.out.println(
         "=======================================================================================");
 
     // To get size of JSON array
     int sizeOfArray = parentArray.size();
-    System.out.println("Size of array is " + sizeOfArray);
+    log("Size of array is " + sizeOfArray);
 
-    System.out.println(
-        "=======================================================================================");
+    log("=======================================================================================");
 
     // To iterate JSON array
     Iterator<JsonNode> iterator = parentArray.iterator();
-    System.out.println("Printing Json Node using iterator");
+    log("Printing Json Node using iterator");
     while (iterator.hasNext()) {
       JsonNode currentJsonNode = iterator.next();
-      System.out.println(
-          objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(currentJsonNode));
+      log(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(currentJsonNode));
     }
 
     System.out.println(
@@ -103,16 +103,15 @@ public class CreateJSONArrayUsingJacksonAPI {
 
     // To remove an element from array
     parentArray.remove(0);
-    System.out.println(
+    log(
         "After removing first element from array : "
             + objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(parentArray));
 
-    System.out.println(
-        "=======================================================================================");
+    log("=======================================================================================");
 
     // To empty JSON Array
     parentArray.removeAll();
-    System.out.println(
+    log(
         "After removing all elements from array : "
             + objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(parentArray));
   }

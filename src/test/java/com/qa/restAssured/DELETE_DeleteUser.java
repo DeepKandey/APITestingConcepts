@@ -8,6 +8,8 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static com.qa.util.LoggerUtil.log;
+
 public class DELETE_DeleteUser {
 
   @Test
@@ -28,9 +30,9 @@ public class DELETE_DeleteUser {
 
     // Validate Headers
     Headers headers = restResponse.headers();
-    System.out.println("Headers in Response Body-->");
+    log("Headers in Response Body-->");
     for (Header header : headers) {
-      System.out.println(header.getName() + " = " + header.getValue());
+      log(header.getName() + " = " + header.getValue());
     }
   } // end of method deleteUserTest
 } // end of class RestAssuredDelete_DeleteUser

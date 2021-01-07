@@ -6,10 +6,13 @@ import com.qa.pojo.UpdateUserDetails;
 import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
-import java.util.ArrayList;
-import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.qa.util.LoggerUtil.log;
 
 public class PUT_UpdateUser {
 
@@ -25,7 +28,7 @@ public class PUT_UpdateUser {
     UpdateUserDetails updateUserRequest = new UpdateUserDetails("Deepak", "Automation");
     Gson gson = new Gson();
     String jsonStringRequestBody = gson.toJson(updateUserRequest);
-    System.out.println("Json String Request Payload--> " + jsonStringRequestBody);
+    log("Json String Request Payload--> " + jsonStringRequestBody);
 
     // Rest Response
     Response restResponse =
@@ -36,10 +39,10 @@ public class PUT_UpdateUser {
             jsonStringRequestBody);
 
     // Validate Status Code
-    System.out.println("Status Code in Response--> " + restResponse.getStatusCode());
+    log("Status Code in Response--> " + restResponse.getStatusCode());
 
     String jsonStringresponseBody = restResponse.getBody().asString();
-    System.out.println("JSON String Response Body--> " + jsonStringresponseBody);
+    log("JSON String Response Body--> " + jsonStringresponseBody);
 
     // Deserialization from JsonString to POJO | unmarshalling
     UpdateUserDetails updateUserResponse =
