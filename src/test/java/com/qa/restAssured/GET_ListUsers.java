@@ -65,13 +65,10 @@ public class GET_ListUsers {
     Iterator<Object> usersDataArrayIterator = usersDataArray.iterator();
     while (usersDataArrayIterator.hasNext()) {
 
-      Iterator dataArrayValuesEntrySet =
-          ((Map) usersDataArrayIterator.next()).entrySet().iterator();
-
-      while (dataArrayValuesEntrySet.hasNext()) {
-        Map.Entry singleRecordEntrySet = (Map.Entry) dataArrayValuesEntrySet.next();
+      for (Object o : ((Map) usersDataArrayIterator.next()).entrySet()) {
+        Map.Entry singleRecordEntrySet = (Map.Entry) o;
         System.out.print(
-            singleRecordEntrySet.getKey() + " = " + singleRecordEntrySet.getValue() + ", ");
+                singleRecordEntrySet.getKey() + " = " + singleRecordEntrySet.getValue() + ", ");
       }
     }
   } // end of method getListOfUsersDetails

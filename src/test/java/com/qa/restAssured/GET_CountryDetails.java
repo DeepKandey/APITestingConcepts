@@ -1,7 +1,5 @@
 package com.qa.restAssured;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
 import com.qa.constants.CommonAPIConstants;
 import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
@@ -12,17 +10,18 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Map;
 
 import static com.qa.util.LoggerUtil.log;
 
 public class GET_CountryDetails {
 
   @Test
-  public void getCountryDetails() throws ParseException {
+  public void getCountryDetails() throws ParseException, IOException {
 
     // Headers details
     Header h1 = new Header("content-type", "application/json");
@@ -42,18 +41,12 @@ public class GET_CountryDetails {
 
     // Response Body
     log("Response body in json-->");
-    restResponse.body().prettyPrint();
-
-    String jsonResponseBody =
-        restResponse.body().asString().substring(1);
-    jsonResponseBody = jsonResponseBody.substring(0, jsonResponseBody.length() - 1);
-    log("JSON Response-->" + System.lineSeparator() + jsonResponseBody);
+    log(restResponse.body().asPrettyString());
 
     // JSON Simple
-    JsonFactory factory = new JsonFactory();
-    factory.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
     JSONParser parser = new JSONParser();
-    JSONObject jsonString = (JSONObject) parser.parse(jsonResponseBody.trim());
+    JSONArray jsonArray = (JSONArray) parser.parse(restResponse.body().asPrettyString());
+    JSONObject jsonString = (JSONObject) jsonArray.get(0);
 
     // Printing JSON Object
     String countryName = jsonString.get("name").toString();
@@ -88,7 +81,7 @@ public class GET_CountryDetails {
     log("Currencies Array--> " + Currencies);
     for (Object currency : Currencies) {
       HashMap<String, String> currencyMap = (HashMap<String, String>) currency;
-      for (Entry<String, String> currencyValuePair : currencyMap.entrySet()) {
+      for (Map.Entry<String, String> currencyValuePair : currencyMap.entrySet()) {
         log(currencyValuePair.getKey() + " : " + currencyValuePair.getValue());
       }
     }

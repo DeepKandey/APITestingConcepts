@@ -15,15 +15,38 @@ public class RestCommonMethods {
   /**
    * {summary method to execute get API request}
    *
-   * @param endpointURL, serviceURL, headersList
+   * @param baseURI,serviceURL,headersList Endpoint and Service URLs and headers
    * @return Response
    * @author deepak rai
    */
   public static Response getAPIRequest(
-      String endpointURL, String serviceURL, List<Header> headersList) {
+      String baseURI, String serviceURL, List<Header> headersList) {
 
-    RestAssured.baseURI = endpointURL;
+    RestAssured.baseURI = baseURI;
     RequestSpecification restClient = RestAssured.given();
+    Headers headers = new Headers(headersList);
+    restClient.headers(headers);
+    return restClient.request(Method.GET, serviceURL);
+  }
+
+  /**
+   * {summary method to execute get API request}
+   *
+   * @param baseURI,serviceURL,headersList,username,password Endpoint,Service URLs and
+   *     headers
+   * @return Response
+   * @author deepak rai
+   */
+  public static Response getAPIRequestWithBasicAuthentication(
+      String baseURI,
+      String serviceURL,
+      List<Header> headersList,
+      String username,
+      String password) {
+
+    RestAssured.baseURI = baseURI;
+    RequestSpecification restClient = RestAssured.given();
+    restClient.auth().basic(username, password);
     Headers headers = new Headers(headersList);
     restClient.headers(headers);
     return restClient.request(Method.GET, serviceURL);
@@ -32,14 +55,14 @@ public class RestCommonMethods {
   /**
    * {summary method to execute post API request}
    *
-   * @param endpointURL, serviceURL, headersList
+   * @param baseURI,serviceURL,headersList Endpoint and Service URLs,headers and payload
    * @return Response
    * @author deepak rai
    */
   public static Response postAPIRequest(
-      String endpointURL, String serviceURL, List<Header> headersList, String jsonRequestBody) {
+      String baseURI, String serviceURL, List<Header> headersList, String jsonRequestBody) {
 
-    RestAssured.baseURI = endpointURL;
+    RestAssured.baseURI = baseURI;
     RequestSpecification restClient = RestAssured.given();
     restClient.headers("content-type", "application/json");
     Headers headers = new Headers(headersList);
@@ -51,14 +74,14 @@ public class RestCommonMethods {
   /**
    * {summary method to execute put API request}
    *
-   * @param endpointURL,serviceURL,headersList PUT API parameters
+   * @param baseURI,serviceURL,headersList PUT API parameters
    * @return Response
    * @author deepak rai
    */
   public static Response putAPIRequest(
-      String endpointURL, String serviceURL, List<Header> headersList, String jsonRequestBody) {
+      String baseURI, String serviceURL, List<Header> headersList, String jsonRequestBody) {
 
-    RestAssured.baseURI = endpointURL;
+    RestAssured.baseURI = baseURI;
     RequestSpecification restClient = RestAssured.given();
     restClient.headers("content-type", "application/json");
     Headers headers = new Headers(headersList);
@@ -70,13 +93,13 @@ public class RestCommonMethods {
   /**
    * {summary method to execute delete API request}
    *
-   * @param endpointURL, serviceURL
+   * @param baseURI,serviceURL Endpoint and Service URLs
    * @return Response
    * @author deepak rai
    */
-  public static Response deleteAPIRequest(String endpointURL, String serviceURL) {
+  public static Response deleteAPIRequest(String baseURI, String serviceURL) {
 
-    RestAssured.baseURI = endpointURL;
+    RestAssured.baseURI = baseURI;
     RequestSpecification restClient = RestAssured.given();
     return restClient.request(Method.DELETE, serviceURL);
   }

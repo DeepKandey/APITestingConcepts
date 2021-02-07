@@ -1,4 +1,3 @@
-/** */
 package com.qa.restAssured;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -31,17 +30,17 @@ public class CreateJSONArrayUsingJacksonAPI {
     firstBookingDetails.put("firstName", "Jim");
     firstBookingDetails.put("lastName", "Brown");
     // integer as field value
-    firstBookingDetails.put("totalprice", 111);
+    firstBookingDetails.put("totalPrice", 111);
     // boolean as field value
-    firstBookingDetails.put("depositpaid", true);
-    firstBookingDetails.put("additionalneeds", "Breakfast");
+    firstBookingDetails.put("depositPaid", true);
+    firstBookingDetails.put("additionalNeeds", "Breakfast");
 
     // Since requirement is to create nested JSON object structures in JSON content
     ObjectNode firstBookingDateDetails = objectMapper.createObjectNode();
-    firstBookingDateDetails.put("checkin", "2021-07-01");
+    firstBookingDateDetails.put("checkIn", "2021-07-01");
     firstBookingDateDetails.put("checkout", "2021-07-10");
 
-    firstBookingDetails.set("bookingdates", firstBookingDateDetails);
+    firstBookingDetails.set("bookingDates", firstBookingDateDetails);
 
     // Create Node that maps to JSON Objects structures in JSON content
     ObjectNode secondBookingDetails = objectMapper.createObjectNode();
@@ -49,25 +48,24 @@ public class CreateJSONArrayUsingJacksonAPI {
     secondBookingDetails.put("firstName", "Deepak");
     secondBookingDetails.put("lastName", "Rai");
     // integer as field value
-    secondBookingDetails.put("totalprice", 111);
+    secondBookingDetails.put("totalPrice", 111);
     // boolean as field value
-    secondBookingDetails.put("depositpaid", true);
-    secondBookingDetails.put("additionalneeds", "Breakfast");
+    secondBookingDetails.put("depositPaid", true);
+    secondBookingDetails.put("additionalNeeds", "Breakfast");
 
     // Since requirement is to create nested JSON object structures in JSON content
-    ObjectNode secondBookingDatedetails = objectMapper.createObjectNode();
-    secondBookingDatedetails.put("checkin", "2021-07-01");
-    secondBookingDatedetails.put("checkout", "2021-08-10");
+    ObjectNode secondBookingDateDetails = objectMapper.createObjectNode();
+    secondBookingDateDetails.put("checkIn", "2021-07-01");
+    secondBookingDateDetails.put("checkout", "2021-08-10");
 
-    secondBookingDetails.set("bookingdates", secondBookingDatedetails);
+    secondBookingDetails.set("bookingDates", secondBookingDateDetails);
 
     // Add JSON Objects to JSON Array
     parentArray.add(firstBookingDetails);
     parentArray.add(secondBookingDetails);
 
     // OR
-    // parentArray.addAll(Arrays.asList(firstBookingDatedetails,
-    // secondBookingDatedetails));
+    // parentArray.addAll(Arrays.asList(firstBookingDateDetails,secondBookingDateDetails));
 
     String jsonArrayAsString =
         objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(parentArray);

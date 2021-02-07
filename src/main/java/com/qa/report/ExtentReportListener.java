@@ -38,7 +38,6 @@ public class ExtentReportListener implements ITestListener {
   @Override
   public void onTestSuccess(ITestResult result) {
     log((result.getMethod().getMethodName() + " passed!"));
-    test.get().pass("Test Case Passed");
   }
 
   @Override
