@@ -1,6 +1,7 @@
 package com.qa.util;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
@@ -22,18 +23,16 @@ public class RestCommonMethods {
   public static Response getAPIRequest(
       String baseURI, String serviceURL, List<Header> headersList) {
 
-    RestAssured.baseURI = baseURI;
-    RequestSpecification restClient = RestAssured.given();
-    Headers headers = new Headers(headersList);
-    restClient.headers(headers);
+    RequestSpecification restClient =
+        RestAssured.given().baseUri(baseURI).headers(new Headers(headersList));
+
     return restClient.request(Method.GET, serviceURL);
   }
 
   /**
    * {summary method to execute get API request}
    *
-   * @param baseURI,serviceURL,headersList,username,password Endpoint,Service URLs and
-   *     headers
+   * @param baseURI,serviceURL,headersList,username,password Endpoint,Service URLs and headers
    * @return Response
    * @author deepak rai
    */
@@ -44,11 +43,13 @@ public class RestCommonMethods {
       String username,
       String password) {
 
-    RestAssured.baseURI = baseURI;
-    RequestSpecification restClient = RestAssured.given();
-    restClient.auth().basic(username, password);
-    Headers headers = new Headers(headersList);
-    restClient.headers(headers);
+    RequestSpecification restClient =
+        RestAssured.given()
+            .baseUri(baseURI)
+            .auth()
+            .basic(username, password)
+            .headers(new Headers(headersList));
+
     return restClient.request(Method.GET, serviceURL);
   }
 
@@ -62,12 +63,13 @@ public class RestCommonMethods {
   public static Response postAPIRequest(
       String baseURI, String serviceURL, List<Header> headersList, String jsonRequestBody) {
 
-    RestAssured.baseURI = baseURI;
-    RequestSpecification restClient = RestAssured.given();
-    restClient.headers("content-type", "application/json");
-    Headers headers = new Headers(headersList);
-    restClient.headers(headers);
-    restClient.body(jsonRequestBody);
+    RequestSpecification restClient =
+        RestAssured.given()
+            .baseUri(baseURI)
+            .contentType(ContentType.JSON)
+            .headers(new Headers(headersList))
+            .body(jsonRequestBody);
+
     return restClient.request(Method.POST, serviceURL);
   }
 
@@ -81,12 +83,13 @@ public class RestCommonMethods {
   public static Response putAPIRequest(
       String baseURI, String serviceURL, List<Header> headersList, String jsonRequestBody) {
 
-    RestAssured.baseURI = baseURI;
-    RequestSpecification restClient = RestAssured.given();
-    restClient.headers("content-type", "application/json");
-    Headers headers = new Headers(headersList);
-    restClient.headers(headers);
-    restClient.body(jsonRequestBody);
+    RequestSpecification restClient =
+        RestAssured.given()
+            .baseUri(baseURI)
+            .contentType(ContentType.JSON)
+            .headers(new Headers(headersList))
+            .body(jsonRequestBody);
+
     return restClient.request(Method.PUT, serviceURL);
   }
 
@@ -98,9 +101,7 @@ public class RestCommonMethods {
    * @author deepak rai
    */
   public static Response deleteAPIRequest(String baseURI, String serviceURL) {
-
-    RestAssured.baseURI = baseURI;
-    RequestSpecification restClient = RestAssured.given();
+    RequestSpecification restClient = RestAssured.given().baseUri(baseURI);
     return restClient.request(Method.DELETE, serviceURL);
   }
 } // End of class RestCommonMethods

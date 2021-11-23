@@ -1,6 +1,5 @@
 package com.qa.restAssured;
 
-import com.qa.constants.CommonAPIConstants;
 import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
@@ -52,7 +51,7 @@ public class GETJiraTaskDetails {
     // API Call
     Response response =
         RestCommonMethods.getAPIRequest(
-            CommonAPIConstants.GOREST_ENDPOINT_URL, "/rest/agile/1.0/board", headerList);
+            "https://ftdr.atlassian.net", "/rest/agile/1.0/board", headerList);
 
     // Parsing JSON body
     JSONParser parser = new JSONParser();
@@ -107,7 +106,7 @@ public class GETJiraTaskDetails {
       // API call
       Response response =
           RestCommonMethods.getAPIRequest(
-              CommonAPIConstants.GOREST_ENDPOINT_URL,
+              "https://ftdr.atlassian.net",
               "/rest/agile/1.0/board/" + boardId + "/sprint",
               headerList);
 
@@ -119,7 +118,9 @@ public class GETJiraTaskDetails {
       // Fetch active sprint ids
       for (Object o : sprintList) {
         JSONObject singleSprintDetails = (JSONObject) o;
-        if (singleSprintDetails.get("state").equals("active")) {
+        if (singleSprintDetails.get("state").equals("active")
+            && (singleSprintDetails.get("name").equals("ONDBackend 2021 PI 2 Sprint 2")
+                || singleSprintDetails.get("name").equals("ONDFrontend 2021 PI 2 Sprint 2"))) {
           // String sprintName = (String) singleSprintDetails.get("name");
           long sprintId = (long) singleSprintDetails.get("id");
           sprintIds.add(sprintId);
@@ -161,7 +162,7 @@ public class GETJiraTaskDetails {
       // API call
       Response response =
           RestCommonMethods.getAPIRequest(
-              CommonAPIConstants.GOREST_ENDPOINT_URL,
+              "https://ftdr.atlassian.net",
               "/rest/agile/1.0/board/" + boardIds.get(k) + "/sprint/" + sprintIds.get(l) + "/issue",
               headerList);
 
@@ -185,7 +186,7 @@ public class GETJiraTaskDetails {
         cell = row.createCell(j);
         cell.setCellValue(issueKey);
 
-        // fields details of the jira ticket
+        // fields detail of the jira ticket
         JSONObject fields = (JSONObject) singleIssueDetails.get("fields");
 
         // Summary

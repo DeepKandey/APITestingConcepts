@@ -1,4 +1,4 @@
-/** @author Deepak Rai */
+/* @author Deepak Rai */
 package com.qa.restAssured;
 
 import com.google.gson.Gson;
@@ -12,18 +12,14 @@ import java.io.IOException;
 
 import static com.qa.util.LoggerUtil.log;
 
-public class SerializeAndDeserializeObjectUsingGSON {
+public class SerializeAndDeserializeUsingGSON {
   /**
    * {@summary erializeJavaToJsonObjectUsingGSON}
-   *
-   * @param
-   * @return
+
    * @author deepak rai
    */
   @Test
-  private void SerializeAndDeserializeObjectUsingGSONtest() throws IOException {
-
-    // Create a Employee java object
+  private void SerializeAndDeserializeObjectUsingGSONTest() throws IOException {
     Employee employeeObject = new Employee();
     employeeObject.setFirstName("Deepak");
     employeeObject.setLastName("Rai");
@@ -32,7 +28,6 @@ public class SerializeAndDeserializeObjectUsingGSON {
     employeeObject.setMarried(false);
     employeeObject.setGender("M");
 
-    // create GSON object
     Gson gsonObj = new Gson();
     // toJson(object src) method converts Java object to JSON object
     String employeeJsonString = gsonObj.toJson(employeeObject);
@@ -63,7 +58,7 @@ public class SerializeAndDeserializeObjectUsingGSON {
     String gender = employeeObjResponseFromJSONString.getGender();
     int age = employeeObjResponseFromJSONString.getAge();
     double salary = employeeObjResponseFromJSONString.getSalary();
-    boolean married = employeeObjResponseFromJSONString.getMarried();
+    boolean married = employeeObjResponseFromJSONString.isMarried();
 
     log("\nDetails of Employee is as below:-");
     log("First Name : " + firsName);
@@ -85,7 +80,7 @@ public class SerializeAndDeserializeObjectUsingGSON {
     String gender1 = employeeObjResponseFromJSONFile.getGender();
     int age1 = employeeObjResponseFromJSONFile.getAge();
     double salary1 = employeeObjResponseFromJSONFile.getSalary();
-    boolean married1 = employeeObjResponseFromJSONFile.getMarried();
+    boolean married1 = employeeObjResponseFromJSONFile.isMarried();
 
     log("\nDetails of Employee from json file is as below:-");
     log("First Name : " + firsName1);

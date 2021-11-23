@@ -5,7 +5,6 @@
     <listeners>
         <listener class-name="com.qa.report.ExtentReportListener"/>
         <listener class-name="com.qa.report.AllureReportListener"/>
-        <listener class-name="com.qa.report.TesultsReportListener"/>
     </listeners>
 
     <test thread-count="6" name="Rest Assured Tests" parallel="methods">

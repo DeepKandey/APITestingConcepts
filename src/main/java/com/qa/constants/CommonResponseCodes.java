@@ -11,7 +11,8 @@ public class CommonResponseCodes {
       201; // A resource was successfully created in response to a POST request.
 
   public static final int RESPONSE_CODE_204 =
-      204; // The request was handled successfully and the response contains no body content (like a
+      204; // The request was handled successfully and the response contains no content in body(like
+  // a
   // DELETE request).
 
   public static final int RESPONSE_CODE_304 =
@@ -24,13 +25,12 @@ public class CommonResponseCodes {
   public static final int RESPONSE_CODE_401 = 401; // Authentication failed.
 
   public static final int RESPONSE_CODE_403 =
-      403; // AThe authenticated user is not allowed to access the specified
+      403; // The authenticated user is not allowed to access the specified
   // API end point.
 
   public static final int RESPONSE_CODE_404 = 404; // The requested resource does not exist.
 
-  public static final int RESPONSE_CODE_405 =
-      405; // Method not allowed. Please check the Allow header for the
+  public static final int RESPONSE_CODE_405 = 405; // Method not allowed. Please check for the
   // allowed HTTP methods.
 
   public static final int RESPONSE_CODE_415 =
@@ -47,6 +47,24 @@ public class CommonResponseCodes {
   // limiting.
 
   public static final int RESPONSE_CODE_500 =
-      400; // Internal server error. This could be caused by internal program
+      500; // Internal server error. This could be caused by internal program
   // errors.
+
+  public static final int RESPONSE_CODE_501 =
+      501; // the server does not recognize the request method and is incapable of supporting it for
+  // any resource
+
+  public static final int RESPONSE_CODE_502 =
+      502; // the server, while acting as a gateway or proxy, received an invalid response from the
+  // upstream server.
+
+  public static final int RESPONSE_CODE_503 =
+      503; // the website's server is simply not available right now
+
+  public static final int RESPONSE_CODE_504 =
+      504; // the server, while acting as a gateway or proxy, did not get a response in time from
+  // the upstream server that it needed in order to complete the request
+
+  public static final int RESPONSE_CODE_505 =
+      505; // HTTP version used in the request is not supported by the server.
 }

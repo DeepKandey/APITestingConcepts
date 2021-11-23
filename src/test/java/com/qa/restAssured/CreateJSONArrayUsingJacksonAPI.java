@@ -15,23 +15,14 @@ public class CreateJSONArrayUsingJacksonAPI {
 
   @Test
   private void createJsonArray() throws JsonProcessingException {
-
     ObjectMapper objectMapper = new ObjectMapper();
-
-    // Create an array that will hold 2 JSON objects
     ArrayNode parentArray = objectMapper.createArrayNode();
 
     // Create Node that maps to JSON Objects structures in JSON content
     ObjectNode firstBookingDetails = objectMapper.createObjectNode();
-
-    // It is similar to map put method. put method is overloaded to accept different
-    // types of data
-    // String as field value
     firstBookingDetails.put("firstName", "Jim");
     firstBookingDetails.put("lastName", "Brown");
-    // integer as field value
     firstBookingDetails.put("totalPrice", 111);
-    // boolean as field value
     firstBookingDetails.put("depositPaid", true);
     firstBookingDetails.put("additionalNeeds", "Breakfast");
 
@@ -44,12 +35,9 @@ public class CreateJSONArrayUsingJacksonAPI {
 
     // Create Node that maps to JSON Objects structures in JSON content
     ObjectNode secondBookingDetails = objectMapper.createObjectNode();
-
     secondBookingDetails.put("firstName", "Deepak");
     secondBookingDetails.put("lastName", "Rai");
-    // integer as field value
     secondBookingDetails.put("totalPrice", 111);
-    // boolean as field value
     secondBookingDetails.put("depositPaid", true);
     secondBookingDetails.put("additionalNeeds", "Breakfast");
 
