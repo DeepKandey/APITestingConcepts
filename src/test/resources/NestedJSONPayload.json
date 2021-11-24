@@ -3,7 +3,7 @@
   "companyHOCity" : "Pune",
   "companyCEO" : "Deepak",
   "supportedSalaryBanks" : [ "HDFC", "ICICI", "AXIS" ],
-  "pincodesOfCityOffice" : [ 560037, 360034, 456343 ],
+  "pinCodeOfCityOffice" : [ 560037, 360034, 456343 ],
   "employee" : [ {
     "firstName" : "Gunjan",
     "lastName" : "Saxena",
@@ -37,9 +37,9 @@
     "contractFrom" : "Jan-2017",
     "contractTo" : "JAN-2030"
   } ],
-  "companyPFDeails" : {
+  "companyPFDetails" : {
     "pfName" : "XYZ",
-    "pfCity" : "Benagluru",
+    "pfCity" : "Bengaluru",
     "pfYear" : 2012,
     "noOfEmployees" : 10
   }

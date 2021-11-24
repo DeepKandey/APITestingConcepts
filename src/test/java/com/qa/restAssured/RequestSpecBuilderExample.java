@@ -60,7 +60,7 @@ public class RequestSpecBuilderExample {
     log("Response time in ms using time(): " + responseTime2);
 
     long responseTimeInSeconds2 = response2.timeIn(TimeUnit.SECONDS);
-    log("Response time in ms using timeIn(): " + responseTimeInSeconds2);
+    log("Response time in seconds using timeIn(): " + responseTimeInSeconds2);
 
     // Interface ValidatableResponseOptions :-
 
@@ -76,7 +76,7 @@ public class RequestSpecBuilderExample {
 
     // Asserting response time in between some values
     valRes.time(
-        Matchers.both(Matchers.greaterThanOrEqualTo(2000L)).and(Matchers.lessThanOrEqualTo(4000L)));
+        Matchers.both(Matchers.greaterThanOrEqualTo(1000L)).and(Matchers.lessThanOrEqualTo(4000L)));
 
     // Assert response time in different time units
     valRes.time(Matchers.lessThan(4L), TimeUnit.SECONDS);

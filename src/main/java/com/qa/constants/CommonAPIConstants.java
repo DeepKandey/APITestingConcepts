@@ -15,5 +15,5 @@ public class CommonAPIConstants {
 
   // gorest APIs
   public static final String GOREST_ENDPOINT_URL = "https://gorest.co.in/public-api";
-  public static final String SINGLE_USER_URL_GOREST = "/users/12899";
+  public static final String SINGLE_USER_URL_GOREST = "/users/50";
 } // End of class CommonConstants

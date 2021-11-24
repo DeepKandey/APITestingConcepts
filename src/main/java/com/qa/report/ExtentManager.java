@@ -3,9 +3,10 @@ package com.qa.report;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.Platform;
+
 import java.io.File;
 import java.util.Date;
-import org.openqa.selenium.Platform;
 
 public class ExtentManager {
 
@@ -34,9 +35,9 @@ public class ExtentManager {
     String fileName = getReportFileLocation(platform);
     ExtentSparkReporter htmlReporter = new ExtentSparkReporter(fileName);
     htmlReporter.config().setTheme(Theme.STANDARD);
-    htmlReporter.config().setDocumentTitle(fileName);
+    htmlReporter.config().setDocumentTitle("AutomationTesting.in Demo Report");
     htmlReporter.config().setEncoding("utf-8");
-    htmlReporter.config().setReportName(fileName);
+    htmlReporter.config().setReportName("My Own Report");
 
     extent = new ExtentReports();
     extent.attachReporter(htmlReporter);
@@ -44,6 +45,7 @@ public class ExtentManager {
     extent.setSystemInfo("Automation Tester", "Deepak Rai");
     extent.setSystemInfo("Organization", "Deepak Automation Labs");
     extent.setSystemInfo("Build Number", "Deepak 1.0");
+    extent.setSystemInfo("Environment", "QA");
 
     return extent;
   } // End of method createInstance
@@ -55,17 +57,14 @@ public class ExtentManager {
       case MAC -> {
         reportFileLocation = macReportFileLoc;
         createReportPath(macPath);
-        System.out.println("ExtentReport Path for MAC: " + macPath + "\n");
       }
       case WIN10 -> {
         reportFileLocation = winReportFileLoc;
         createReportPath(windowsPath);
-        System.out.println("ExtentReport Path for WINDOWS: " + windowsPath + "\n");
       }
       case LINUX -> {
         reportFileLocation = linuxReportFileLoc;
         createReportPath(linuxPath);
-        System.out.println("ExtentReport Path for LINUX: " + linuxPath + "\n");
       }
       default -> System.out.println("ExtentReport path has not been set! There is a problem!\n");
     }
@@ -73,17 +72,11 @@ public class ExtentManager {
   } // End of method getReportFileLocation
 
   // Create the report path if it does not exist
-  private static void createReportPath(String path) {
+  private static boolean createReportPath(String path) {
     File testDirectory = new File(path);
     if (!testDirectory.exists()) {
-      if (testDirectory.mkdir()) {
-        System.out.println("Directory: " + path + " is created!");
-      } else {
-        System.out.println("Failed to create directory: " + path);
-      }
-    } else {
-      System.out.println("Directory already exists: " + path);
-    }
+    return   testDirectory.mkdir();
+    }else return false;
   } // End of method createReportPath
 
   // Get current platform

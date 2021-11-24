@@ -2,139 +2,43 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
-    "_meta": {
-      "type": "object",
-      "properties": {
-        "success": {
-          "type": "boolean"
-        },
-        "code": {
-          "type": "integer"
-        },
-        "message": {
-          "type": "string"
-        },
-        "rateLimit": {
-          "type": "object",
-          "properties": {
-            "limit": {
-              "type": "integer"
-            },
-            "remaining": {
-              "type": "integer"
-            },
-            "reset": {
-              "type": "integer"
-            }
-          },
-          "required": [
-            "limit",
-            "remaining",
-            "reset"
-          ]
-        }
-      },
-      "required": [
-        "success",
-        "code",
-        "message",
-        "rateLimit"
-      ]
+    "code": {
+      "type": "integer"
     },
-    "result": {
+    "meta": {
+      "type": "null"
+    },
+    "data": {
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer"
         },
-        "first_name": {
-          "type": "string"
-        },
-        "last_name": {
-          "type": "string"
-        },
-        "gender": {
-          "type": "string"
-        },
-        "dob": {
+        "name": {
           "type": "string"
         },
         "email": {
           "type": "string"
         },
-        "phone": {
-          "type": "string"
-        },
-        "website": {
-          "type": "string"
-        },
-        "address": {
+        "gender": {
           "type": "string"
         },
         "status": {
           "type": "string"
-        },
-        "_links": {
-          "type": "object",
-          "properties": {
-            "self": {
-              "type": "object",
-              "properties": {
-                "href": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "href"
-              ]
-            },
-            "edit": {
-              "type": "object",
-              "properties": {
-                "href": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "href"
-              ]
-            },
-            "avatar": {
-              "type": "object",
-              "properties": {
-                "href": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "href"
-              ]
-            }
-          },
-          "required": [
-            "self",
-            "edit",
-            "avatar"
-          ]
         }
       },
       "required": [
         "id",
-        "first_name",
-        "last_name",
-        "gender",
-        "dob",
+        "name",
         "email",
-        "phone",
-        "website",
-        "address",
-        "status",
-        "_links"
+        "gender",
+        "status"
       ]
     }
   },
   "required": [
-    "_meta",
-    "result"
+    "code",
+    "meta",
+    "data"
   ]
 }

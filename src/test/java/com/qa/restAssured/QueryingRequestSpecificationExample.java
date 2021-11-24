@@ -24,15 +24,14 @@ public class QueryingRequestSpecificationExample {
     String JsonBody = "{\"firstName\": \"Deepak\"}";
 
     // create RequestSpecification using given
-    RequestSpecification reqSpecification = RestAssured.given();
-    // setting base URI
-    reqSpecification
-        .baseUri("https://restful-booker.herokuapp.com")
-        // setting base path
-        .basePath("/booking")
-        .body(JsonBody)
-        .header("header1", "headerValue1")
-        .header("header2", "headerValue2");
+    RequestSpecification reqSpecification =
+        RestAssured.given()
+            .baseUri("https://restful-booker.herokuapp.com")
+            // setting base path
+            .basePath("/booking")
+            .body(JsonBody)
+            .header("header1", "headerValue1")
+            .header("header2", "headerValue2");
 
     // Querying RequestSpecification
     // Use query() method of SpecificationQuerier class to query

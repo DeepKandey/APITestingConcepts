@@ -1,16 +1,17 @@
-/** */
+/* */
 package com.qa.restAssured;
-
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 import com.qa.constants.CommonAPIConstants;
 import com.qa.util.RestCommonMethods;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.testng.annotations.Test;
+
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 /** @author deepak */
 public class JSONSchemaValidation {
@@ -20,7 +21,7 @@ public class JSONSchemaValidation {
 
     // Headers details
     Header h1 = new Header("Authorization", "Bearer NFsy75Qo3gD8owfvnhan1fR5njSbItF8I6vu");
-    List<Header> headerList = new ArrayList<Header>();
+    List<Header> headerList = new ArrayList<>();
     headerList.add(h1);
 
     Response response =

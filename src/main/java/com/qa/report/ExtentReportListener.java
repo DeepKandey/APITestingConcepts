@@ -9,8 +9,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.util.Arrays;
-
 import static com.qa.util.LoggerUtil.log;
 
 public class ExtentReportListener implements ITestListener {
@@ -44,7 +42,7 @@ public class ExtentReportListener implements ITestListener {
   public void onTestFailure(ITestResult result) {
     log((result.getMethod().getMethodName() + " failed!"));
 
-    String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+    String exceptionMessage = (result.getThrowable().getMessage());
     test.get()
         .fail(
             "<details>"
@@ -80,12 +78,12 @@ public class ExtentReportListener implements ITestListener {
 
   @Override
   public void onStart(ITestContext context) {
-    log("Extent Reports Version 4 Test Suite started! " + context.getOutputDirectory());
+    log("Extent Reports Version 5 Test Suite started! " + context.getOutputDirectory());
   }
 
   @Override
   public void onFinish(ITestContext context) {
-    log("Extent Reports Version 4  Test Suite is ending!");
+    log("Extent Reports Version 5  Test Suite is ending!");
     extent.flush();
     test.remove();
   }
