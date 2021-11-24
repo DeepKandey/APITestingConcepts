@@ -23,7 +23,7 @@ public class GET_SingleUser {
 
     // Headers details
     Header h1 = new Header("content-type", "application/json");
-    List<Header> headerList = new ArrayList<Header>();
+    List<Header> headerList = new ArrayList<>();
     headerList.add(h1);
 
     Response restResponse =

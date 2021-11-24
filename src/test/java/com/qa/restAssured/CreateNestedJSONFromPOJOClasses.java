@@ -1,7 +1,9 @@
-/** @author Deepak Rai */
+/* @author Deepak Rai */
 package com.qa.restAssured;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Getter;
+import lombok.Setter;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -15,24 +17,24 @@ import static com.qa.util.LoggerUtil.log;
 public class CreateNestedJSONFromPOJOClasses {
 
   @Test
-  private void createNestedJSONFromPOJOClassestest() throws IOException {
+  private void createNestedJSONFromPOJOClassesTest() throws IOException {
 
     NestedPOJO nestedPOJO = new NestedPOJO();
     nestedPOJO.setCompanyName("Sync");
     nestedPOJO.setCompanyHOCity("Pune");
     nestedPOJO.setCompanyCEO("Deepak");
 
-    List<String> supportedSalaryBanks = new ArrayList<String>();
+    List<String> supportedSalaryBanks = new ArrayList<>();
     supportedSalaryBanks.add("HDFC");
     supportedSalaryBanks.add("ICICI");
     supportedSalaryBanks.add("AXIS");
     nestedPOJO.setSupportedSalaryBanks(supportedSalaryBanks);
 
-    List<Integer> pincodesOfCityOffice = new ArrayList<Integer>();
-    pincodesOfCityOffice.add(560037);
-    pincodesOfCityOffice.add(360034);
-    pincodesOfCityOffice.add(456343);
-    nestedPOJO.setPincodesOfCityOffice(pincodesOfCityOffice);
+    List<Integer> pinCodeOfCityOffice = new ArrayList<>();
+    pinCodeOfCityOffice.add(560037);
+    pinCodeOfCityOffice.add(360034);
+    pinCodeOfCityOffice.add(456343);
+    nestedPOJO.setPinCodeOfCityOffice(pinCodeOfCityOffice);
 
     // Just create an object of POJO class
     Employee employeeObjAsRequest1 = new Employee();
@@ -62,9 +64,7 @@ public class CreateNestedJSONFromPOJOClasses {
     employeeObjAsRequest3.setMarried(false);
 
     // Create a list of employees
-    List<Employee> allEmployeesAsRequest = new ArrayList<>();
-    allEmployeesAsRequest.addAll(
-        Arrays.asList(employeeObjAsRequest1, employeeObjAsRequest2, employeeObjAsRequest3));
+    List<Employee> allEmployeesAsRequest = new ArrayList<>(Arrays.asList(employeeObjAsRequest1, employeeObjAsRequest2, employeeObjAsRequest3));
     nestedPOJO.setEmployee(allEmployeesAsRequest);
 
     Contractors seema = new Contractors();
@@ -79,17 +79,17 @@ public class CreateNestedJSONFromPOJOClasses {
     hari.setContractFrom("Jan-2017");
     hari.setContractTo("JAN-2030");
 
-    List<Contractors> allContractors = new ArrayList<Contractors>();
+    List<Contractors> allContractors = new ArrayList<>();
     allContractors.add(seema);
     allContractors.add(hari);
     nestedPOJO.setContractors(allContractors);
 
-    CompanyPFDeails companyPFDeails = new CompanyPFDeails();
-    companyPFDeails.setPfName("XYZ");
-    companyPFDeails.setPfCity("Bengaluru");
-    companyPFDeails.setPfYear(2012);
-    companyPFDeails.setNoOfEmployees(10);
-    nestedPOJO.setCompanyPFDetails(companyPFDeails);
+    CompanyPFDetails companyPFDetails = new CompanyPFDetails();
+    companyPFDetails.setPfName("XYZ");
+    companyPFDetails.setPfCity("Bengaluru");
+    companyPFDetails.setPfYear(2012);
+    companyPFDetails.setNoOfEmployees(10);
+    nestedPOJO.setCompanyPFDetails(companyPFDetails);
 
     // POJO to JSON string
     ObjectMapper objMapper = new ObjectMapper();
@@ -104,156 +104,33 @@ public class CreateNestedJSONFromPOJOClasses {
   }
 }
 
+@Getter
+@Setter
 class Contractors {
   private String firstName;
   private String lastName;
   private String contractFrom;
   private String contractTo;
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getContractFrom() {
-    return contractFrom;
-  }
-
-  public void setContractFrom(String contractFrom) {
-    this.contractFrom = contractFrom;
-  }
-
-  public String getContractTo() {
-    return contractTo;
-  }
-
-  public void setContractTo(String contractTo) {
-    this.contractTo = contractTo;
-  }
 }
 
-class CompanyPFDeails {
+@Setter
+@Getter
+class CompanyPFDetails {
   private String pfName;
   private String pfCity;
   private int pfYear;
   private int noOfEmployees;
-
-  public String getPfName() {
-    return pfName;
-  }
-
-  public void setPfName(String pfName) {
-    this.pfName = pfName;
-  }
-
-  public String getPfCity() {
-    return pfCity;
-  }
-
-  public void setPfCity(String pfCity) {
-    this.pfCity = pfCity;
-  }
-
-  public int getPfYear() {
-    return pfYear;
-  }
-
-  public void setPfYear(int pfYear) {
-    this.pfYear = pfYear;
-  }
-
-  public int getNoOfEmployees() {
-    return noOfEmployees;
-  }
-
-  public void setNoOfEmployees(int noOfEmployees) {
-    this.noOfEmployees = noOfEmployees;
-  }
 }
 
+@Getter
+@Setter
 class NestedPOJO {
-
   private String companyName;
   private String companyHOCity;
   private String companyCEO;
   private List<String> supportedSalaryBanks;
-  private List<Integer> pincodesOfCityOffice;
+  private List<Integer> pinCodeOfCityOffice;
   List<Employee> employee;
   List<Contractors> contractors;
-  CompanyPFDeails companyPFDeails;
-
-  public String getCompanyName() {
-    return companyName;
-  }
-
-  public void setCompanyName(String companyName) {
-    this.companyName = companyName;
-  }
-
-  public String getCompanyHOCity() {
-    return companyHOCity;
-  }
-
-  public void setCompanyHOCity(String companyHOCity) {
-    this.companyHOCity = companyHOCity;
-  }
-
-  public String getCompanyCEO() {
-    return companyCEO;
-  }
-
-  public void setCompanyCEO(String companyCEO) {
-    this.companyCEO = companyCEO;
-  }
-
-  public List<String> getSupportedSalaryBanks() {
-    return supportedSalaryBanks;
-  }
-
-  public void setSupportedSalaryBanks(List<String> supportedSalaryBanks) {
-    this.supportedSalaryBanks = supportedSalaryBanks;
-  }
-
-  public List<Integer> getPincodesOfCityOffice() {
-    return pincodesOfCityOffice;
-  }
-
-  public void setPincodesOfCityOffice(List<Integer> pincodesOfCityOffice) {
-    this.pincodesOfCityOffice = pincodesOfCityOffice;
-  }
-
-  public List<Employee> getEmployee() {
-    return employee;
-  }
-
-  public void setEmployee(List<Employee> employee) {
-    this.employee = employee;
-  }
-
-  public List<Contractors> getContractors() {
-    return contractors;
-  }
-
-  public void setContractors(List<Contractors> contractors) {
-    this.contractors = contractors;
-  }
-
-  public CompanyPFDeails getCompanyPFDeails() {
-    return companyPFDeails;
-  }
-
-  public void setCompanyPFDetails(CompanyPFDeails companyPFDeails) {
-    this.companyPFDeails = companyPFDeails;
-  }
+  CompanyPFDetails companyPFDetails;
 }

@@ -1,19 +1,18 @@
-/** @author Deepak Rai */
+/* @author Deepak Rai */
 package com.qa.restAssured;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.testng.annotations.Test;
+
 import java.util.HashMap;
 import java.util.Map;
-import org.testng.annotations.Test;
 
 public class CreateNestedJSONObjectUsingMap {
 
   /**
    * {@summary create json object using Map and pass it as payload}
    *
-   * @param
-   * @return
    * @author deepak rai
    */
   @Test
@@ -22,15 +21,15 @@ public class CreateNestedJSONObjectUsingMap {
     Map<String, Object> jsonBodyUsingMap = new HashMap<>();
     jsonBodyUsingMap.put("firstname", "Jim");
     jsonBodyUsingMap.put("lastname", "Brown");
-    jsonBodyUsingMap.put("totalprice", 111);
-    jsonBodyUsingMap.put("depositpaid", true);
+    jsonBodyUsingMap.put("totalPrice", 111);
+    jsonBodyUsingMap.put("depositPaid", true);
 
     Map<String, String> bookingDatesMap = new HashMap<>();
-    bookingDatesMap.put("checkin", "2021-07-01");
+    bookingDatesMap.put("checkIn", "2021-07-01");
     bookingDatesMap.put("checkout", "2021-08-01");
 
-    jsonBodyUsingMap.put("bokingdates", bookingDatesMap);
-    jsonBodyUsingMap.put("additionalneeds", "Breakfast");
+    jsonBodyUsingMap.put("bookingDates", bookingDatesMap);
+    jsonBodyUsingMap.put("additionalNeeds", "Breakfast");
 
     // Given
     RestAssured.given()

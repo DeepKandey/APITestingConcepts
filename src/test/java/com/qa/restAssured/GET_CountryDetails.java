@@ -10,7 +10,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +20,7 @@ import static com.qa.util.LoggerUtil.log;
 public class GET_CountryDetails {
 
   @Test
-  public void getCountryDetails() throws ParseException, IOException {
+  public void getCountryDetails() throws ParseException {
 
     // Headers details
     Header h1 = new Header("content-type", "application/json");
@@ -34,16 +33,12 @@ public class GET_CountryDetails {
             CommonAPIConstants.WASHINGTON_COUNTRY_URL,
             headerList);
 
-    // Status Line
     log("Status Line--> " + restResponse.getStatusLine());
-    // Headers
     log("Headers in Response-->" + System.lineSeparator() + restResponse.headers());
 
-    // Response Body
     log("Response body in json-->");
     log(restResponse.body().asPrettyString());
 
-    // JSON Simple
     JSONParser parser = new JSONParser();
     JSONArray jsonArray = (JSONArray) parser.parse(restResponse.body().asPrettyString());
     JSONObject jsonString = (JSONObject) jsonArray.get(0);

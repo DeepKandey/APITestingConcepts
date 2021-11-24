@@ -64,8 +64,7 @@ public class GET_ListUsers {
 
     Iterator<Object> usersDataArrayIterator = usersDataArray.iterator();
     while (usersDataArrayIterator.hasNext()) {
-
-      for (Object o : ((Map) usersDataArrayIterator.next()).entrySet()) {
+      for (Object o : ((Map<String,String>) usersDataArrayIterator.next()).entrySet()) {
         Map.Entry singleRecordEntrySet = (Map.Entry) o;
         System.out.print(
                 singleRecordEntrySet.getKey() + " = " + singleRecordEntrySet.getValue() + ", ");

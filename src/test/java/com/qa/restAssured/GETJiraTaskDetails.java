@@ -50,8 +50,7 @@ public class GETJiraTaskDetails {
 
     // API Call
     Response response =
-        RestCommonMethods.getAPIRequest(
-            "https://ftdr.atlassian.net", "/rest/agile/1.0/board", headerList);
+        RestCommonMethods.getAPIRequest("<baseUrl>", "/rest/agile/1.0/board", headerList);
 
     // Parsing JSON body
     JSONParser parser = new JSONParser();
@@ -64,8 +63,8 @@ public class GETJiraTaskDetails {
     for (Object o : boardList) {
       JSONObject singleBoardDetails = (JSONObject) o;
 
-      if (singleBoardDetails.get("name").equals("OND-Backend")
-          || singleBoardDetails.get("name").equals("OND-Frontend")) {
+      if (singleBoardDetails.get("name").equals("Backend")
+          || singleBoardDetails.get("name").equals("Frontend")) {
         String boardName = (String) singleBoardDetails.get("name");
         if (!workBook.getSheetName(sheetIndex).equals(boardName)) {
           workBook.setSheetName(sheetIndex, boardName); // set the sheet name as per the board name
@@ -106,9 +105,7 @@ public class GETJiraTaskDetails {
       // API call
       Response response =
           RestCommonMethods.getAPIRequest(
-              "https://ftdr.atlassian.net",
-              "/rest/agile/1.0/board/" + boardId + "/sprint",
-              headerList);
+              "<baseUrl>", "/rest/agile/1.0/board/" + boardId + "/sprint", headerList);
 
       // Parsing JSON body
       JSONParser parser = new JSONParser();
@@ -119,8 +116,8 @@ public class GETJiraTaskDetails {
       for (Object o : sprintList) {
         JSONObject singleSprintDetails = (JSONObject) o;
         if (singleSprintDetails.get("state").equals("active")
-            && (singleSprintDetails.get("name").equals("ONDBackend 2021 PI 2 Sprint 2")
-                || singleSprintDetails.get("name").equals("ONDFrontend 2021 PI 2 Sprint 2"))) {
+            && (singleSprintDetails.get("name").equals("Sprint 2")
+                || singleSprintDetails.get("name").equals("2021 PI 2 Sprint 2"))) {
           // String sprintName = (String) singleSprintDetails.get("name");
           long sprintId = (long) singleSprintDetails.get("id");
           sprintIds.add(sprintId);
@@ -162,7 +159,7 @@ public class GETJiraTaskDetails {
       // API call
       Response response =
           RestCommonMethods.getAPIRequest(
-              "https://ftdr.atlassian.net",
+              "<baseUrl",
               "/rest/agile/1.0/board/" + boardIds.get(k) + "/sprint/" + sprintIds.get(l) + "/issue",
               headerList);
 

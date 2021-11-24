@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.qa.util.LoggerUtil.log;
 
-public class CreateJSONUsingPOJO {
+public class SerializeAndDeserializeUsingJackson {
 
   @Test
   private void createJSONUsingPOJOTest() throws JsonProcessingException {
