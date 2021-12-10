@@ -17,7 +17,7 @@
         <poi.version>4.1.1</poi.version>
         <rest-assured.version>4.4.0</rest-assured.version>
         <jackson-core.version>2.13.0</jackson-core.version>
-        <log4j2.version>2.14.1</log4j2.version>
+        <log4j2.version>2.15.0</log4j2.version>
         <lombok.version>1.18.22</lombok.version>
         <maven.compiler.release>14</maven.compiler.release>
         <maven.compiler.testRelease>14</maven.compiler.testRelease>
