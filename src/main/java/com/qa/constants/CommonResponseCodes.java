@@ -12,8 +12,7 @@ public class CommonResponseCodes {
 
   public static final int RESPONSE_CODE_204 =
       204; // The request was handled successfully and the response contains no content in body(like
-  // a
-  // DELETE request).
+  // a DELETE request).
 
   public static final int RESPONSE_CODE_304 =
       304; // The resource was not modified. You can use the cached version.

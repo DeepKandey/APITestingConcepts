@@ -15,7 +15,7 @@ import static com.qa.util.LoggerUtil.log;
 public class CreateNestedJSONObjectUsingJacksonAPI {
 
   @Test
-  private void createNestedJSONObjectUsingJacksonAPItest() throws JsonProcessingException {
+  private void createNestedJSONObjectUsingJacksonAPITest() throws JsonProcessingException {
 
     // ObjectMapper object
     ObjectMapper objMapper = new ObjectMapper();
@@ -44,12 +44,12 @@ public class CreateNestedJSONObjectUsingJacksonAPI {
     String firstName = bookingDetails.get("firstname").asText();
     log("\nFirst Name is: " + firstName);
 
-    Boolean depositPaid = bookingDetails.get("depositPaid").asBoolean();
+    boolean depositPaid = bookingDetails.get("depositPaid").asBoolean();
     log("Deposit paid is: " + depositPaid);
 
     // To retrieve value of nested ObjectNode
-    String checkindate = bookingDetails.get("bookingDates").get("checkin").asText();
-    log("checkin date is: " + checkindate);
+    String checkInDate = bookingDetails.get("bookingDates").get("checkin").asText();
+    log("checkIn date is: " + checkInDate);
 
     // To get size of ObjectNode means field names count
     log("Count of fields in ObjectNode: " + bookingDetails.size());
