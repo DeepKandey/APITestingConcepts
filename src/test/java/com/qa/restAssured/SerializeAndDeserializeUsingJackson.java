@@ -71,7 +71,9 @@ public class SerializeAndDeserializeUsingJackson {
     log("Marital status of employee : " + employeeObjAsResponse.isMarried());
 
     // Create a list of employees
-    List<Employee> allEmployeesAsRequest = new ArrayList<>(Arrays.asList(employeeObjAsRequest1, employeeObjAsRequest2, employeeObjAsRequest3));
+    List<Employee> allEmployeesAsRequest =
+        new ArrayList<>(
+            Arrays.asList(employeeObjAsRequest1, employeeObjAsRequest2, employeeObjAsRequest3));
 
     // Converting a Java class object(ArrayList) to a JSON Array pay load as string
     // (Serialize)
@@ -81,8 +83,7 @@ public class SerializeAndDeserializeUsingJackson {
 
     // Converting Employee JSON Array string to Employee class object(De-serialize)
     List<Employee> allEmployeesAsResponse =
-        objectMapper.readValue(employeeListJSONArray, new TypeReference<>() {
-        });
+        objectMapper.readValue(employeeListJSONArray, new TypeReference<>() {});
 
     System.out.println("-----------Loop Employee list--------");
     for (Employee employee : allEmployeesAsResponse) {
