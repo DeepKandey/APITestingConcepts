@@ -17,10 +17,10 @@
         <poi.version>4.1.1</poi.version>
         <rest-assured.version>4.4.0</rest-assured.version>
         <jackson-core.version>2.13.0</jackson-core.version>
-        <log4j2.version>2.15.0</log4j2.version>
+        <log4j2.version>2.16.0</log4j2.version>
         <lombok.version>1.18.22</lombok.version>
-        <maven.compiler.release>14</maven.compiler.release>
-        <maven.compiler.testRelease>14</maven.compiler.testRelease>
+        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.testRelease>17</maven.compiler.testRelease>
     </properties>
 
     <dependencies>
@@ -156,6 +156,14 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.skyscreamer/jsonassert -->
+        <dependency>
+            <groupId>org.skyscreamer</groupId>
+            <artifactId>jsonassert</artifactId>
+            <version>1.5.0</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
