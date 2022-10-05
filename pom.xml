@@ -16,7 +16,7 @@
         <aspectj.version>1.9.7</aspectj.version>
         <poi.version>4.1.1</poi.version>
         <rest-assured.version>4.4.0</rest-assured.version>
-        <jackson-core.version>2.13.0</jackson-core.version>
+        <jackson-core.version>2.13.2.1</jackson-core.version>
         <log4j2.version>2.17.0</log4j2.version>
         <lombok.version>1.18.22</lombok.version>
         <maven.compiler.release>17</maven.compiler.release>
