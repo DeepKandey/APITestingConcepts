@@ -18,7 +18,7 @@ public class CompareTwoJsonArray {
 
 
         jsonArray1 = """
-                [0
+                [
                   {
                     "lastName": "Mahajan",
                     "firstName": "Amod",
