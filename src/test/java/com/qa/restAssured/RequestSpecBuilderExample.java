@@ -47,11 +47,11 @@ public class RequestSpecBuilderExample {
     Response response3 = RestAssured.given().spec(reqSpec).get();
     log(response3.asString());
 
-    // By default response time is given in milliseconds
+    // By default, response time is given in milliseconds
     long responseTime1 = response2.getTime();
     log("Response time in ms using getTime(): " + responseTime1);
 
-    // By default response time is given in milliseconds
+    // By default, response time is given in milliseconds
     long responseTimeInSeconds1 = response2.getTimeIn(TimeUnit.SECONDS);
     log("Response time in ms using getTimeIn(): " + responseTimeInSeconds1);
 
